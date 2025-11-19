@@ -25,7 +25,7 @@
   COPY . .
   
   # Gera o Prisma Client (antes do build)
-  RUN pnpm exec prisma generate
+  RUN pnpm prisma generate
   
   # Compila o TypeScript
   RUN pnpm run build

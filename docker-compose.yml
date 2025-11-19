@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  neofrota_api:
+    container_name: neofrota_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    expose:
+      - "4000"
+    depends_on:
+      - neofrota_db
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - DB_HOST=neofrota_db
+      - DB_PORT=5432
+    networks:
+      - neofrota-network
+      - proxy_network
+
+  neofrota_db:
+    container_name: neofrota_db
+    image: postgres:14-alpine
+    hostname: db
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    expose:
+      - "5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - neofrota-network
+
+volumes:
+  postgres_data:
+
+networks:
+  neofrota-network:
+    driver: bridge
+  proxy_network:
+    external: true

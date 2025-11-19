@@ -1,0 +1,43 @@
+Volkswagen Up
+Volkswagen Gol
+Volkswagen Polo
+Volkswagen Nivus
+Volkswagen T-Cross
+Volkswagen Virtus
+Volkswagen Saveiro
+Chevrolet Onix
+Chevrolet Onix Plus
+Chevrolet Cobalt
+Chevrolet Spin
+Chevrolet Montana
+Hyundai HB20
+Hyundai HB20S
+Hyundai Creta
+Fiat Mobi
+Fiat Argo
+Fiat Cronos
+Fiat Uno
+Fiat Strada
+Nissan Kicks
+Nissan Versa
+Renault Kwid
+Renault Logan
+Renault Sandero
+Toyota Etios
+Toyota Yaris
+Toyota Corolla
+Honda City
+Honda Civic
+BYD Dolphin
+BYD Dolphin Mini
+
+
+Alerta do Motorista no app
+
+Campo notificação de estacionamento
+
+Desconto e Crédito com programação
+
+Criar campo de novas msg no dashboard para comentários de motoristas nos vouchers
+
+Incluir número Chave de acesso da nota no financeiro

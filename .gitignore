@@ -1,0 +1,20 @@
+# Dependências
+node_modules
+
+# Arquivos de ambiente
+.env.production
+
+# Pasta de build
+dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Arquivos do Gemini
+gemini.md
+
+# Lockfile do NPM (não usado com pnpm)
+package-lock.json

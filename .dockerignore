@@ -1,0 +1,43 @@
+# Dependencies
+node_modules
+
+# Build artifacts
+dist
+build
+
+# Docker
+Dockerfile
+.dockerignore
+
+# Git
+.git
+.gitignore
+
+# Environment
+.env
+.env.example
+stack.env
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# IDEs and editors
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Misc
+*.md
+sugestões.txt
+builderror.txt
+settings.json
+nodemon.json

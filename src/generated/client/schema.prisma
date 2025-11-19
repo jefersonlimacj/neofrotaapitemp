@@ -32,7 +32,6 @@ model CentroCustoCliente {
   codigo           String?         @map("codigo") @db.VarChar(50)
   empresaClienteId BigInt?         @map("empresa_cliente_id")
   operadoraId      BigInt?         @map("operadora_id")
-  descricao        String?         @map("descricao") @db.VarChar(255)
   empresaCliente   EmpresaCliente? @relation(fields: [empresaClienteId], references: [id])
   operadora        Operadora?      @relation(fields: [operadoraId], references: [id])
   passageiros      Passageiro[]
@@ -198,7 +197,7 @@ model Solicitante {
 model Passageiro {
   id                   BigInt  @id @default(autoincrement())
   nome                 String  @map("nome")
-  matricula            String? @unique @map("matricula")
+  matricula            String? @map("matricula")
   telefone             String? @map("telefone")
   email                String? @unique @map("email")
   ativo                Boolean @default(true) @map("ativo")

@@ -1,68 +1,66 @@
 # -------------------------
-# Etapa 1 — Builder
+# Builder
 # -------------------------
-  FROM node:22-alpine AS builder
+FROM node:22-alpine AS builder
 
-  # Evita avisos e garante encoding UTF-8
-  ENV LANG=C.UTF-8
-  ENV NODE_ENV=development
-  
-  # Instala dependências do sistema necessárias (Prisma, bcrypt, etc.)
-  RUN apk add --no-cache openssl libc6-compat python3 make g++
-  
-  WORKDIR /app
-  
-  # Instala a versão mais recente do pnpm globalmente
-  RUN corepack enable && corepack prepare pnpm@latest --activate
-  
-  # Copia apenas os manifests para otimizar cache
-  COPY package.json pnpm-lock.yaml* ./
-  
-  # Instala todas as dependências (incluindo dev)
-  RUN pnpm install --frozen-lockfile=false
-  
-  # Copia o restante do projeto
-  COPY . .
-  
-  # Gera o Prisma Client (antes do build)
-  RUN pnpm prisma generate
-  
-  # Compila o TypeScript
-  RUN pnpm run build
-  
-  
-  # -------------------------
-  # Etapa 2 — Runtime
-  # -------------------------
-  FROM node:22-alpine AS runner
-  
-  # Mantém a imagem mínima possível
-  RUN apk add --no-cache openssl
-  
-  WORKDIR /app
-  
-  ENV NODE_ENV=production
-  ENV PORT=4000
-  
-  # Habilita o corepack para usar pnpm no runtime
-  RUN corepack enable && corepack prepare pnpm@latest --activate
-  
-  # Copia apenas o necessário da etapa anterior
-  COPY --from=builder /app/package.json ./package.json
-  COPY --from=builder /app/pnpm-lock.yaml ./pnpm-lock.yaml
-  COPY --from=builder /app/node_modules ./node_modules
-  COPY --from=builder /app/dist ./dist
-  COPY --from=builder /app/prisma ./prisma
-  
-  # Expondo a porta do app
-  EXPOSE 4000
-  
-  # Copia o entrypoint.sh e o torna executável
-  COPY entrypoint.sh /app/entrypoint.sh
-  RUN chmod +x /app/entrypoint.sh
-  
-  # Define o entrypoint para o script
-  ENTRYPOINT ["/app/entrypoint.sh"]
-  # Comando de inicialização
-  CMD ["pnpm", "start"]
-  
+WORKDIR /app
+
+# Força hoisting (essa é a linha que resolve o seu erro de uma vez)
+RUN echo "node-linker=hoisted" > .npmrc && \
+    echo "shamefully-hoist=true" >> .npmrc
+
+# Instala dependências do sistema
+RUN apk add --no-cache openssl libc6-compat python3 make g++
+
+# Corepack + pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# Copia manifests
+COPY package.json pnpm-lock.yaml* ./
+
+# Instala dependências
+RUN pnpm install --frozen-lockfile
+
+# Copia o resto do código
+COPY . .
+
+# Gera o Prisma Client (agora vai aparecer em node_modules/.prisma/client)
+RUN pnpm prisma generate
+
+# Compila
+RUN pnpm run build
+
+# -------------------------
+# Runtime
+# -------------------------
+FROM node:22-alpine AS runner
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+ENV PORT=4000
+
+# Mesma coisa no runtime (senão dá erro na hora de startar)
+RUN echo "node-linker=hoisted" > .npmrc && \
+    echo "shamefully-hoist=true" >> .npmrc
+
+RUN apk add --no-cache openssl
+
+RUN corepack enable && corepack prepare pnpm@latest --activate
+
+# Copia só o necessário
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/pnpm-lock.yaml* ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/.npmrc ./.npmrc
+
+# entrypoint
+COPY entrypoint.sh ./entrypoint.sh
+RUN chmod +x entrypoint.sh
+
+EXPOSE 4000
+
+ENTRYPOINT ["/app/entrypoint.sh"]
+CMD ["pnpm", "start"]

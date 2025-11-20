@@ -1,4 +1,4 @@
-import { PrismaClient, RelacaoAgrdFunc } from "../../generated/client";
+import { PrismaClient, RelacaoAgrdFunc } from "../../generated/client/default";
 
 const prisma = new PrismaClient();
 

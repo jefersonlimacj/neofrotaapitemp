@@ -1,4 +1,4 @@
-import { PrismaClient, Pedagio } from "../../generated/client";
+import { PrismaClient, Pedagio } from "../../generated/client/default";
 
 const prisma = new PrismaClient();
 

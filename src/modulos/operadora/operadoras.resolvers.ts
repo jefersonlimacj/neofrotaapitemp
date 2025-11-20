@@ -1,4 +1,4 @@
-import { PrismaClient, Operadora } from "../../generated/client";
+import { PrismaClient, Operadora } from "../../generated/client/default";
 
 export const prisma = new PrismaClient();
 

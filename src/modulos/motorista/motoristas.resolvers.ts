@@ -1,4 +1,4 @@
-import { PrismaClient, Motorista } from "../../generated/client";
+import { PrismaClient, Motorista } from "../../generated/client/default";
 import jwt from "jsonwebtoken";
 
 const prisma = new PrismaClient();

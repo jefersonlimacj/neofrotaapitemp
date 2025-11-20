@@ -1,4 +1,4 @@
-import { PrismaClient, Carro, Modelo } from "../../generated/client";
+import { PrismaClient, Carro, Modelo } from "../../generated/client/default";
 
 const prisma = new PrismaClient();
 

@@ -1,4 +1,4 @@
-import { PrismaClient, CentroCustoCliente } from "../../generated/client";
+import { PrismaClient, CentroCustoCliente } from "../../generated/client/default";
 import { centroCustoTypes } from "./centro_custo.types";
 
 const prisma = new PrismaClient();

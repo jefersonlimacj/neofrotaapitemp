@@ -29,13 +29,16 @@ async function rodarServidor({
       origin: [
         "http://localhost:5173",
         "https://studio.apollographql.com",
-        "*",
         "https://app.neofrota.com.br/",
         "https://neofrota.com.br/",
       ], // Ajuste para seu frontend e Apollo Studio
       credentials: true, // Se usar cookies/auth
+      methods: ["GET", "POST", "OPTIONS"],
+      allowedHeaders: ["Content-Type", "Authorization"],
     })
   );
+
+  app.options("*", cors());
 
   // Rota simples para o uptime robot
   app.get("/ping", (req: Request, res: Response) => {

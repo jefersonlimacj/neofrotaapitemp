@@ -3,12 +3,18 @@ import gql from "graphql-tag";
 export const passageirosTypes = gql`
   type Passageiro {
     id: ID!
-    nome: String!
+    nome: String
     matricula: String!
     telefone: String
     email: String
     ativo: Boolean!
     fotoPerfilPassageiro: String!
+    endRua: String
+    endNumero: String
+    endBairro: String
+    endCidade: String
+    pontoApanha: String
+    horarioEmbarque: String
     centroCustoClienteId: CentroCusto
     empresaClienteId: EmpresaCliente
   }
@@ -18,7 +24,6 @@ export const passageirosTypes = gql`
     passageiro(id: ID!): Passageiro
     passageirosByCentroCustoCliente(centroCustoClienteId: ID!): [Passageiro!]!
     passageirosByEmpresaCliente(empresaClienteId: ID!): [Passageiro!]!
-
   }
 
   input PassageiroInput {
@@ -27,6 +32,12 @@ export const passageirosTypes = gql`
     telefone: String
     email: String
     ativo: Boolean!
+    endRua: String
+    endNumero: String
+    endBairro: String
+    endCidade: String
+    pontoApanha: String
+    horarioEmbarque: String
     fotoPerfilPassageiro: String!
     centroCustoClienteId: Int
     empresaClienteId: Int
@@ -34,6 +45,7 @@ export const passageirosTypes = gql`
 
   type Mutation {
     createPassageiro(data: PassageiroInput!): Passageiro!
+    createPassageiros(data: [PassageiroInput!]!): Int!
     updatePassageiro(id: ID!, data: PassageiroInput!): Passageiro!
     deletePassageiro(id: ID!): Passageiro!
   }

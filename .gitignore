@@ -22,3 +22,6 @@ package-lock.json
 # Arquivos do Docker
 docker-compose.yml
 Dockerfile
+
+passageiros.json
+sP.js

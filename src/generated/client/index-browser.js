@@ -233,11 +233,11 @@ exports.Prisma.SolicitanteScalarFieldEnum = {
   email: 'email',
   senha: 'senha',
   empresaClienteId: 'empresaClienteId',
-  funcao: 'funcao',
   fotoUrlSolicitante: 'fotoUrlSolicitante',
   statusSolicitante: 'statusSolicitante',
   operadoraId: 'operadoraId',
-  telefone: 'telefone'
+  telefone: 'telefone',
+  funcao: 'funcao'
 };
 
 exports.Prisma.PassageiroScalarFieldEnum = {
@@ -249,7 +249,13 @@ exports.Prisma.PassageiroScalarFieldEnum = {
   ativo: 'ativo',
   empresaClienteId: 'empresaClienteId',
   centroCustoClienteId: 'centroCustoClienteId',
-  fotoPerfilPassageiro: 'fotoPerfilPassageiro'
+  fotoPerfilPassageiro: 'fotoPerfilPassageiro',
+  endRua: 'endRua',
+  endNumero: 'endNumero',
+  endBairro: 'endBairro',
+  endCidade: 'endCidade',
+  pontoApanha: 'pontoApanha',
+  horarioEmbarque: 'horarioEmbarque'
 };
 
 exports.Prisma.RotaScalarFieldEnum = {
@@ -270,7 +276,6 @@ exports.Prisma.PedagioScalarFieldEnum = {
 exports.Prisma.RotaValorScalarFieldEnum = {
   id: 'id',
   rotaId: 'rotaId',
-  categoria: 'categoria',
   empresaClienteId: 'empresaClienteId',
   operadoraId: 'operadoraId',
   valorViagem: 'valorViagem',
@@ -279,7 +284,8 @@ exports.Prisma.RotaValorScalarFieldEnum = {
   valorHoraParadaRepasse: 'valorHoraParadaRepasse',
   valorDeslocamento: 'valorDeslocamento',
   valorDeslocamentoRepasse: 'valorDeslocamentoRepasse',
-  valorPedagio: 'valorPedagio'
+  valorPedagio: 'valorPedagio',
+  categoria: 'categoria'
 };
 
 exports.Prisma.ModeloVoucherFixoScalarFieldEnum = {
@@ -304,8 +310,8 @@ exports.Prisma.ModeloVoucherFixoScalarFieldEnum = {
   valorTempoParadoRepasse: 'valorTempoParadoRepasse',
   dataInicio: 'dataInicio',
   dataFim: 'dataFim',
-  diasSemana: 'diasSemana',
-  horario: 'horario'
+  horario: 'horario',
+  diasSemana: 'diasSemana'
 };
 
 exports.Prisma.RelacaoAgrdFuncScalarFieldEnum = {
@@ -319,16 +325,13 @@ exports.Prisma.VoucherPassageiroScalarFieldEnum = {
   id: 'id',
   voucherId: 'voucherId',
   passageiroId: 'passageiroId',
-  statusPresenca: 'statusPresenca',
   horarioEmbarqueReal: 'horarioEmbarqueReal',
-  observacao: 'observacao'
+  observacao: 'observacao',
+  statusPresenca: 'statusPresenca'
 };
 
 exports.Prisma.VoucherScalarFieldEnum = {
   id: 'id',
-  natureza: 'natureza',
-  tipoCorrida: 'tipoCorrida',
-  status: 'status',
   origem: 'origem',
   destino: 'destino',
   dataHoraProgramado: 'dataHoraProgramado',
@@ -347,7 +350,10 @@ exports.Prisma.VoucherScalarFieldEnum = {
   motoristaId: 'motoristaId',
   carroId: 'carroId',
   adminUsuarioId: 'adminUsuarioId',
-  operadoraId: 'operadoraId'
+  operadoraId: 'operadoraId',
+  natureza: 'natureza',
+  tipoCorrida: 'tipoCorrida',
+  status: 'status'
 };
 
 exports.Prisma.SortOrder = {

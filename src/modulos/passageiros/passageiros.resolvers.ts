@@ -52,6 +52,10 @@ export const passageirosResolvers = {
     async createPassageiro(_: any, args: { data: any }) {
       return await prisma.passageiro.create({ data: args.data });
     },
+    async createPassageiros(_: any, args: { data: any[] }) {
+     const result = await prisma.passageiro.createMany({ data: args.data });
+      return result.count;
+    },
     async updatePassageiro(_: any, args: { id: string; data: any }) {
       return await prisma.passageiro.update({
         where: { id: parseInt(args.id, 10) },

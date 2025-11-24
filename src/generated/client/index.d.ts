@@ -7143,10 +7143,10 @@ export namespace Prisma {
     dataCriacao?: boolean
     operadoraId?: boolean
     statusCnh?: boolean
-    operadora?: boolean | Motorista$operadoraArgs<ExtArgs>
     carro?: boolean | Motorista$carroArgs<ExtArgs>
     modeloVoucherFixo?: boolean | Motorista$modeloVoucherFixoArgs<ExtArgs>
     voucher?: boolean | Motorista$voucherArgs<ExtArgs>
+    operadora?: boolean | Motorista$operadoraArgs<ExtArgs>
     agregadoRelacao?: boolean | Motorista$agregadoRelacaoArgs<ExtArgs>
     funcionarioRelacao?: boolean | Motorista$funcionarioRelacaoArgs<ExtArgs>
     _count?: boolean | MotoristaCountOutputTypeDefaultArgs<ExtArgs>
@@ -7204,10 +7204,10 @@ export namespace Prisma {
 
   export type MotoristaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "email" | "senha" | "fotoMotorista" | "cpf" | "cnh" | "vCnh" | "statusMotorista" | "tipoMotorista" | "dataCriacao" | "operadoraId" | "statusCnh", ExtArgs["result"]["motorista"]>
   export type MotoristaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    operadora?: boolean | Motorista$operadoraArgs<ExtArgs>
     carro?: boolean | Motorista$carroArgs<ExtArgs>
     modeloVoucherFixo?: boolean | Motorista$modeloVoucherFixoArgs<ExtArgs>
     voucher?: boolean | Motorista$voucherArgs<ExtArgs>
+    operadora?: boolean | Motorista$operadoraArgs<ExtArgs>
     agregadoRelacao?: boolean | Motorista$agregadoRelacaoArgs<ExtArgs>
     funcionarioRelacao?: boolean | Motorista$funcionarioRelacaoArgs<ExtArgs>
     _count?: boolean | MotoristaCountOutputTypeDefaultArgs<ExtArgs>
@@ -7222,10 +7222,10 @@ export namespace Prisma {
   export type $MotoristaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Motorista"
     objects: {
-      operadora: Prisma.$OperadoraPayload<ExtArgs> | null
       carro: Prisma.$CarroPayload<ExtArgs>[]
       modeloVoucherFixo: Prisma.$ModeloVoucherFixoPayload<ExtArgs>[]
       voucher: Prisma.$VoucherPayload<ExtArgs>[]
+      operadora: Prisma.$OperadoraPayload<ExtArgs> | null
       agregadoRelacao: Prisma.$RelacaoAgrdFuncPayload<ExtArgs>[]
       funcionarioRelacao: Prisma.$RelacaoAgrdFuncPayload<ExtArgs>[]
     }
@@ -7637,10 +7637,10 @@ export namespace Prisma {
    */
   export interface Prisma__MotoristaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    operadora<T extends Motorista$operadoraArgs<ExtArgs> = {}>(args?: Subset<T, Motorista$operadoraArgs<ExtArgs>>): Prisma__OperadoraClient<$Result.GetResult<Prisma.$OperadoraPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     carro<T extends Motorista$carroArgs<ExtArgs> = {}>(args?: Subset<T, Motorista$carroArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CarroPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     modeloVoucherFixo<T extends Motorista$modeloVoucherFixoArgs<ExtArgs> = {}>(args?: Subset<T, Motorista$modeloVoucherFixoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ModeloVoucherFixoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     voucher<T extends Motorista$voucherArgs<ExtArgs> = {}>(args?: Subset<T, Motorista$voucherArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VoucherPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    operadora<T extends Motorista$operadoraArgs<ExtArgs> = {}>(args?: Subset<T, Motorista$operadoraArgs<ExtArgs>>): Prisma__OperadoraClient<$Result.GetResult<Prisma.$OperadoraPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     agregadoRelacao<T extends Motorista$agregadoRelacaoArgs<ExtArgs> = {}>(args?: Subset<T, Motorista$agregadoRelacaoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RelacaoAgrdFuncPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     funcionarioRelacao<T extends Motorista$funcionarioRelacaoArgs<ExtArgs> = {}>(args?: Subset<T, Motorista$funcionarioRelacaoArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$RelacaoAgrdFuncPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
@@ -8081,25 +8081,6 @@ export namespace Prisma {
   }
 
   /**
-   * Motorista.operadora
-   */
-  export type Motorista$operadoraArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Operadora
-     */
-    select?: OperadoraSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Operadora
-     */
-    omit?: OperadoraOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: OperadoraInclude<ExtArgs> | null
-    where?: OperadoraWhereInput
-  }
-
-  /**
    * Motorista.carro
    */
   export type Motorista$carroArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -8169,6 +8150,25 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: VoucherScalarFieldEnum | VoucherScalarFieldEnum[]
+  }
+
+  /**
+   * Motorista.operadora
+   */
+  export type Motorista$operadoraArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Operadora
+     */
+    select?: OperadoraSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Operadora
+     */
+    omit?: OperadoraOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: OperadoraInclude<ExtArgs> | null
+    where?: OperadoraWhereInput
   }
 
   /**
@@ -14522,11 +14522,11 @@ export namespace Prisma {
     email: string | null
     senha: string | null
     empresaClienteId: bigint | null
-    funcao: $Enums.FuncaoSolicitante | null
     fotoUrlSolicitante: string | null
     statusSolicitante: boolean | null
     operadoraId: bigint | null
     telefone: string | null
+    funcao: $Enums.FuncaoSolicitante | null
   }
 
   export type SolicitanteMaxAggregateOutputType = {
@@ -14535,11 +14535,11 @@ export namespace Prisma {
     email: string | null
     senha: string | null
     empresaClienteId: bigint | null
-    funcao: $Enums.FuncaoSolicitante | null
     fotoUrlSolicitante: string | null
     statusSolicitante: boolean | null
     operadoraId: bigint | null
     telefone: string | null
+    funcao: $Enums.FuncaoSolicitante | null
   }
 
   export type SolicitanteCountAggregateOutputType = {
@@ -14548,11 +14548,11 @@ export namespace Prisma {
     email: number
     senha: number
     empresaClienteId: number
-    funcao: number
     fotoUrlSolicitante: number
     statusSolicitante: number
     operadoraId: number
     telefone: number
+    funcao: number
     _all: number
   }
 
@@ -14575,11 +14575,11 @@ export namespace Prisma {
     email?: true
     senha?: true
     empresaClienteId?: true
-    funcao?: true
     fotoUrlSolicitante?: true
     statusSolicitante?: true
     operadoraId?: true
     telefone?: true
+    funcao?: true
   }
 
   export type SolicitanteMaxAggregateInputType = {
@@ -14588,11 +14588,11 @@ export namespace Prisma {
     email?: true
     senha?: true
     empresaClienteId?: true
-    funcao?: true
     fotoUrlSolicitante?: true
     statusSolicitante?: true
     operadoraId?: true
     telefone?: true
+    funcao?: true
   }
 
   export type SolicitanteCountAggregateInputType = {
@@ -14601,11 +14601,11 @@ export namespace Prisma {
     email?: true
     senha?: true
     empresaClienteId?: true
-    funcao?: true
     fotoUrlSolicitante?: true
     statusSolicitante?: true
     operadoraId?: true
     telefone?: true
+    funcao?: true
     _all?: true
   }
 
@@ -14701,11 +14701,11 @@ export namespace Prisma {
     email: string
     senha: string
     empresaClienteId: bigint
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante: string | null
     statusSolicitante: boolean
     operadoraId: bigint | null
     telefone: string | null
+    funcao: $Enums.FuncaoSolicitante
     _count: SolicitanteCountAggregateOutputType | null
     _avg: SolicitanteAvgAggregateOutputType | null
     _sum: SolicitanteSumAggregateOutputType | null
@@ -14733,11 +14733,11 @@ export namespace Prisma {
     email?: boolean
     senha?: boolean
     empresaClienteId?: boolean
-    funcao?: boolean
     fotoUrlSolicitante?: boolean
     statusSolicitante?: boolean
     operadoraId?: boolean
     telefone?: boolean
+    funcao?: boolean
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     operadora?: boolean | Solicitante$operadoraArgs<ExtArgs>
   }, ExtArgs["result"]["solicitante"]>
@@ -14748,11 +14748,11 @@ export namespace Prisma {
     email?: boolean
     senha?: boolean
     empresaClienteId?: boolean
-    funcao?: boolean
     fotoUrlSolicitante?: boolean
     statusSolicitante?: boolean
     operadoraId?: boolean
     telefone?: boolean
+    funcao?: boolean
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     operadora?: boolean | Solicitante$operadoraArgs<ExtArgs>
   }, ExtArgs["result"]["solicitante"]>
@@ -14763,11 +14763,11 @@ export namespace Prisma {
     email?: boolean
     senha?: boolean
     empresaClienteId?: boolean
-    funcao?: boolean
     fotoUrlSolicitante?: boolean
     statusSolicitante?: boolean
     operadoraId?: boolean
     telefone?: boolean
+    funcao?: boolean
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     operadora?: boolean | Solicitante$operadoraArgs<ExtArgs>
   }, ExtArgs["result"]["solicitante"]>
@@ -14778,14 +14778,14 @@ export namespace Prisma {
     email?: boolean
     senha?: boolean
     empresaClienteId?: boolean
-    funcao?: boolean
     fotoUrlSolicitante?: boolean
     statusSolicitante?: boolean
     operadoraId?: boolean
     telefone?: boolean
+    funcao?: boolean
   }
 
-  export type SolicitanteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "email" | "senha" | "empresaClienteId" | "funcao" | "fotoUrlSolicitante" | "statusSolicitante" | "operadoraId" | "telefone", ExtArgs["result"]["solicitante"]>
+  export type SolicitanteOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "email" | "senha" | "empresaClienteId" | "fotoUrlSolicitante" | "statusSolicitante" | "operadoraId" | "telefone" | "funcao", ExtArgs["result"]["solicitante"]>
   export type SolicitanteInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     operadora?: boolean | Solicitante$operadoraArgs<ExtArgs>
@@ -14811,11 +14811,11 @@ export namespace Prisma {
       email: string
       senha: string
       empresaClienteId: bigint
-      funcao: $Enums.FuncaoSolicitante
       fotoUrlSolicitante: string | null
       statusSolicitante: boolean
       operadoraId: bigint | null
       telefone: string | null
+      funcao: $Enums.FuncaoSolicitante
     }, ExtArgs["result"]["solicitante"]>
     composites: {}
   }
@@ -15246,11 +15246,11 @@ export namespace Prisma {
     readonly email: FieldRef<"Solicitante", 'String'>
     readonly senha: FieldRef<"Solicitante", 'String'>
     readonly empresaClienteId: FieldRef<"Solicitante", 'BigInt'>
-    readonly funcao: FieldRef<"Solicitante", 'FuncaoSolicitante'>
     readonly fotoUrlSolicitante: FieldRef<"Solicitante", 'String'>
     readonly statusSolicitante: FieldRef<"Solicitante", 'Boolean'>
     readonly operadoraId: FieldRef<"Solicitante", 'BigInt'>
     readonly telefone: FieldRef<"Solicitante", 'String'>
+    readonly funcao: FieldRef<"Solicitante", 'FuncaoSolicitante'>
   }
     
 
@@ -15718,6 +15718,12 @@ export namespace Prisma {
     empresaClienteId: bigint | null
     centroCustoClienteId: bigint | null
     fotoPerfilPassageiro: string | null
+    endRua: string | null
+    endNumero: string | null
+    endBairro: string | null
+    endCidade: string | null
+    pontoApanha: string | null
+    horarioEmbarque: string | null
   }
 
   export type PassageiroMaxAggregateOutputType = {
@@ -15730,6 +15736,12 @@ export namespace Prisma {
     empresaClienteId: bigint | null
     centroCustoClienteId: bigint | null
     fotoPerfilPassageiro: string | null
+    endRua: string | null
+    endNumero: string | null
+    endBairro: string | null
+    endCidade: string | null
+    pontoApanha: string | null
+    horarioEmbarque: string | null
   }
 
   export type PassageiroCountAggregateOutputType = {
@@ -15742,6 +15754,12 @@ export namespace Prisma {
     empresaClienteId: number
     centroCustoClienteId: number
     fotoPerfilPassageiro: number
+    endRua: number
+    endNumero: number
+    endBairro: number
+    endCidade: number
+    pontoApanha: number
+    horarioEmbarque: number
     _all: number
   }
 
@@ -15768,6 +15786,12 @@ export namespace Prisma {
     empresaClienteId?: true
     centroCustoClienteId?: true
     fotoPerfilPassageiro?: true
+    endRua?: true
+    endNumero?: true
+    endBairro?: true
+    endCidade?: true
+    pontoApanha?: true
+    horarioEmbarque?: true
   }
 
   export type PassageiroMaxAggregateInputType = {
@@ -15780,6 +15804,12 @@ export namespace Prisma {
     empresaClienteId?: true
     centroCustoClienteId?: true
     fotoPerfilPassageiro?: true
+    endRua?: true
+    endNumero?: true
+    endBairro?: true
+    endCidade?: true
+    pontoApanha?: true
+    horarioEmbarque?: true
   }
 
   export type PassageiroCountAggregateInputType = {
@@ -15792,6 +15822,12 @@ export namespace Prisma {
     empresaClienteId?: true
     centroCustoClienteId?: true
     fotoPerfilPassageiro?: true
+    endRua?: true
+    endNumero?: true
+    endBairro?: true
+    endCidade?: true
+    pontoApanha?: true
+    horarioEmbarque?: true
     _all?: true
   }
 
@@ -15891,6 +15927,12 @@ export namespace Prisma {
     empresaClienteId: bigint
     centroCustoClienteId: bigint
     fotoPerfilPassageiro: string | null
+    endRua: string | null
+    endNumero: string | null
+    endBairro: string | null
+    endCidade: string | null
+    pontoApanha: string | null
+    horarioEmbarque: string | null
     _count: PassageiroCountAggregateOutputType | null
     _avg: PassageiroAvgAggregateOutputType | null
     _sum: PassageiroSumAggregateOutputType | null
@@ -15922,6 +15964,12 @@ export namespace Prisma {
     empresaClienteId?: boolean
     centroCustoClienteId?: boolean
     fotoPerfilPassageiro?: boolean
+    endRua?: boolean
+    endNumero?: boolean
+    endBairro?: boolean
+    endCidade?: boolean
+    pontoApanha?: boolean
+    horarioEmbarque?: boolean
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     centroCustoCliente?: boolean | CentroCustoClienteDefaultArgs<ExtArgs>
     viagens?: boolean | Passageiro$viagensArgs<ExtArgs>
@@ -15938,6 +15986,12 @@ export namespace Prisma {
     empresaClienteId?: boolean
     centroCustoClienteId?: boolean
     fotoPerfilPassageiro?: boolean
+    endRua?: boolean
+    endNumero?: boolean
+    endBairro?: boolean
+    endCidade?: boolean
+    pontoApanha?: boolean
+    horarioEmbarque?: boolean
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     centroCustoCliente?: boolean | CentroCustoClienteDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["passageiro"]>
@@ -15952,6 +16006,12 @@ export namespace Prisma {
     empresaClienteId?: boolean
     centroCustoClienteId?: boolean
     fotoPerfilPassageiro?: boolean
+    endRua?: boolean
+    endNumero?: boolean
+    endBairro?: boolean
+    endCidade?: boolean
+    pontoApanha?: boolean
+    horarioEmbarque?: boolean
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     centroCustoCliente?: boolean | CentroCustoClienteDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["passageiro"]>
@@ -15966,9 +16026,15 @@ export namespace Prisma {
     empresaClienteId?: boolean
     centroCustoClienteId?: boolean
     fotoPerfilPassageiro?: boolean
+    endRua?: boolean
+    endNumero?: boolean
+    endBairro?: boolean
+    endCidade?: boolean
+    pontoApanha?: boolean
+    horarioEmbarque?: boolean
   }
 
-  export type PassageiroOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "matricula" | "telefone" | "email" | "ativo" | "empresaClienteId" | "centroCustoClienteId" | "fotoPerfilPassageiro", ExtArgs["result"]["passageiro"]>
+  export type PassageiroOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nome" | "matricula" | "telefone" | "email" | "ativo" | "empresaClienteId" | "centroCustoClienteId" | "fotoPerfilPassageiro" | "endRua" | "endNumero" | "endBairro" | "endCidade" | "pontoApanha" | "horarioEmbarque", ExtArgs["result"]["passageiro"]>
   export type PassageiroInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     centroCustoCliente?: boolean | CentroCustoClienteDefaultArgs<ExtArgs>
@@ -16001,6 +16067,12 @@ export namespace Prisma {
       empresaClienteId: bigint
       centroCustoClienteId: bigint
       fotoPerfilPassageiro: string | null
+      endRua: string | null
+      endNumero: string | null
+      endBairro: string | null
+      endCidade: string | null
+      pontoApanha: string | null
+      horarioEmbarque: string | null
     }, ExtArgs["result"]["passageiro"]>
     composites: {}
   }
@@ -16436,6 +16508,12 @@ export namespace Prisma {
     readonly empresaClienteId: FieldRef<"Passageiro", 'BigInt'>
     readonly centroCustoClienteId: FieldRef<"Passageiro", 'BigInt'>
     readonly fotoPerfilPassageiro: FieldRef<"Passageiro", 'String'>
+    readonly endRua: FieldRef<"Passageiro", 'String'>
+    readonly endNumero: FieldRef<"Passageiro", 'String'>
+    readonly endBairro: FieldRef<"Passageiro", 'String'>
+    readonly endCidade: FieldRef<"Passageiro", 'String'>
+    readonly pontoApanha: FieldRef<"Passageiro", 'String'>
+    readonly horarioEmbarque: FieldRef<"Passageiro", 'String'>
   }
     
 
@@ -19238,7 +19316,6 @@ export namespace Prisma {
   export type RotaValorMinAggregateOutputType = {
     id: number | null
     rotaId: number | null
-    categoria: $Enums.CategoriasCarros | null
     empresaClienteId: bigint | null
     operadoraId: bigint | null
     valorViagem: Decimal | null
@@ -19248,12 +19325,12 @@ export namespace Prisma {
     valorDeslocamento: Decimal | null
     valorDeslocamentoRepasse: Decimal | null
     valorPedagio: number | null
+    categoria: $Enums.CategoriasCarros | null
   }
 
   export type RotaValorMaxAggregateOutputType = {
     id: number | null
     rotaId: number | null
-    categoria: $Enums.CategoriasCarros | null
     empresaClienteId: bigint | null
     operadoraId: bigint | null
     valorViagem: Decimal | null
@@ -19263,12 +19340,12 @@ export namespace Prisma {
     valorDeslocamento: Decimal | null
     valorDeslocamentoRepasse: Decimal | null
     valorPedagio: number | null
+    categoria: $Enums.CategoriasCarros | null
   }
 
   export type RotaValorCountAggregateOutputType = {
     id: number
     rotaId: number
-    categoria: number
     empresaClienteId: number
     operadoraId: number
     valorViagem: number
@@ -19278,6 +19355,7 @@ export namespace Prisma {
     valorDeslocamento: number
     valorDeslocamentoRepasse: number
     valorPedagio: number
+    categoria: number
     _all: number
   }
 
@@ -19313,7 +19391,6 @@ export namespace Prisma {
   export type RotaValorMinAggregateInputType = {
     id?: true
     rotaId?: true
-    categoria?: true
     empresaClienteId?: true
     operadoraId?: true
     valorViagem?: true
@@ -19323,12 +19400,12 @@ export namespace Prisma {
     valorDeslocamento?: true
     valorDeslocamentoRepasse?: true
     valorPedagio?: true
+    categoria?: true
   }
 
   export type RotaValorMaxAggregateInputType = {
     id?: true
     rotaId?: true
-    categoria?: true
     empresaClienteId?: true
     operadoraId?: true
     valorViagem?: true
@@ -19338,12 +19415,12 @@ export namespace Prisma {
     valorDeslocamento?: true
     valorDeslocamentoRepasse?: true
     valorPedagio?: true
+    categoria?: true
   }
 
   export type RotaValorCountAggregateInputType = {
     id?: true
     rotaId?: true
-    categoria?: true
     empresaClienteId?: true
     operadoraId?: true
     valorViagem?: true
@@ -19353,6 +19430,7 @@ export namespace Prisma {
     valorDeslocamento?: true
     valorDeslocamentoRepasse?: true
     valorPedagio?: true
+    categoria?: true
     _all?: true
   }
 
@@ -19445,7 +19523,6 @@ export namespace Prisma {
   export type RotaValorGroupByOutputType = {
     id: number
     rotaId: number
-    categoria: $Enums.CategoriasCarros
     empresaClienteId: bigint | null
     operadoraId: bigint | null
     valorViagem: Decimal
@@ -19455,6 +19532,7 @@ export namespace Prisma {
     valorDeslocamento: Decimal
     valorDeslocamentoRepasse: Decimal
     valorPedagio: number | null
+    categoria: $Enums.CategoriasCarros
     _count: RotaValorCountAggregateOutputType | null
     _avg: RotaValorAvgAggregateOutputType | null
     _sum: RotaValorSumAggregateOutputType | null
@@ -19479,7 +19557,6 @@ export namespace Prisma {
   export type RotaValorSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     rotaId?: boolean
-    categoria?: boolean
     empresaClienteId?: boolean
     operadoraId?: boolean
     valorViagem?: boolean
@@ -19489,6 +19566,7 @@ export namespace Prisma {
     valorDeslocamento?: boolean
     valorDeslocamentoRepasse?: boolean
     valorPedagio?: boolean
+    categoria?: boolean
     rota?: boolean | RotaDefaultArgs<ExtArgs>
     empresaCliente?: boolean | RotaValor$empresaClienteArgs<ExtArgs>
     operadora?: boolean | RotaValor$operadoraArgs<ExtArgs>
@@ -19498,7 +19576,6 @@ export namespace Prisma {
   export type RotaValorSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     rotaId?: boolean
-    categoria?: boolean
     empresaClienteId?: boolean
     operadoraId?: boolean
     valorViagem?: boolean
@@ -19508,6 +19585,7 @@ export namespace Prisma {
     valorDeslocamento?: boolean
     valorDeslocamentoRepasse?: boolean
     valorPedagio?: boolean
+    categoria?: boolean
     rota?: boolean | RotaDefaultArgs<ExtArgs>
     empresaCliente?: boolean | RotaValor$empresaClienteArgs<ExtArgs>
     operadora?: boolean | RotaValor$operadoraArgs<ExtArgs>
@@ -19517,7 +19595,6 @@ export namespace Prisma {
   export type RotaValorSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     rotaId?: boolean
-    categoria?: boolean
     empresaClienteId?: boolean
     operadoraId?: boolean
     valorViagem?: boolean
@@ -19527,6 +19604,7 @@ export namespace Prisma {
     valorDeslocamento?: boolean
     valorDeslocamentoRepasse?: boolean
     valorPedagio?: boolean
+    categoria?: boolean
     rota?: boolean | RotaDefaultArgs<ExtArgs>
     empresaCliente?: boolean | RotaValor$empresaClienteArgs<ExtArgs>
     operadora?: boolean | RotaValor$operadoraArgs<ExtArgs>
@@ -19536,7 +19614,6 @@ export namespace Prisma {
   export type RotaValorSelectScalar = {
     id?: boolean
     rotaId?: boolean
-    categoria?: boolean
     empresaClienteId?: boolean
     operadoraId?: boolean
     valorViagem?: boolean
@@ -19546,9 +19623,10 @@ export namespace Prisma {
     valorDeslocamento?: boolean
     valorDeslocamentoRepasse?: boolean
     valorPedagio?: boolean
+    categoria?: boolean
   }
 
-  export type RotaValorOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "rotaId" | "categoria" | "empresaClienteId" | "operadoraId" | "valorViagem" | "valorViagemRepasse" | "valorHoraParada" | "valorHoraParadaRepasse" | "valorDeslocamento" | "valorDeslocamentoRepasse" | "valorPedagio", ExtArgs["result"]["rotaValor"]>
+  export type RotaValorOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "rotaId" | "empresaClienteId" | "operadoraId" | "valorViagem" | "valorViagemRepasse" | "valorHoraParada" | "valorHoraParadaRepasse" | "valorDeslocamento" | "valorDeslocamentoRepasse" | "valorPedagio" | "categoria", ExtArgs["result"]["rotaValor"]>
   export type RotaValorInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     rota?: boolean | RotaDefaultArgs<ExtArgs>
     empresaCliente?: boolean | RotaValor$empresaClienteArgs<ExtArgs>
@@ -19579,7 +19657,6 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       rotaId: number
-      categoria: $Enums.CategoriasCarros
       empresaClienteId: bigint | null
       operadoraId: bigint | null
       valorViagem: Prisma.Decimal
@@ -19589,6 +19666,7 @@ export namespace Prisma {
       valorDeslocamento: Prisma.Decimal
       valorDeslocamentoRepasse: Prisma.Decimal
       valorPedagio: number | null
+      categoria: $Enums.CategoriasCarros
     }, ExtArgs["result"]["rotaValor"]>
     composites: {}
   }
@@ -20018,7 +20096,6 @@ export namespace Prisma {
   interface RotaValorFieldRefs {
     readonly id: FieldRef<"RotaValor", 'Int'>
     readonly rotaId: FieldRef<"RotaValor", 'Int'>
-    readonly categoria: FieldRef<"RotaValor", 'CategoriasCarros'>
     readonly empresaClienteId: FieldRef<"RotaValor", 'BigInt'>
     readonly operadoraId: FieldRef<"RotaValor", 'BigInt'>
     readonly valorViagem: FieldRef<"RotaValor", 'Decimal'>
@@ -20028,6 +20105,7 @@ export namespace Prisma {
     readonly valorDeslocamento: FieldRef<"RotaValor", 'Decimal'>
     readonly valorDeslocamentoRepasse: FieldRef<"RotaValor", 'Decimal'>
     readonly valorPedagio: FieldRef<"RotaValor", 'Int'>
+    readonly categoria: FieldRef<"RotaValor", 'CategoriasCarros'>
   }
     
 
@@ -20617,8 +20695,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: number
     dataInicio: number
     dataFim: number
-    diasSemana: number
     horario: number
+    diasSemana: number
     _all: number
   }
 
@@ -20729,8 +20807,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: true
     dataInicio?: true
     dataFim?: true
-    diasSemana?: true
     horario?: true
+    diasSemana?: true
     _all?: true
   }
 
@@ -20842,8 +20920,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal
     dataInicio: Date
     dataFim: Date | null
-    diasSemana: $Enums.DiaDaSemana[]
     horario: Date
+    diasSemana: $Enums.DiaDaSemana[]
     _count: ModeloVoucherFixoCountAggregateOutputType | null
     _avg: ModeloVoucherFixoAvgAggregateOutputType | null
     _sum: ModeloVoucherFixoSumAggregateOutputType | null
@@ -20887,8 +20965,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: boolean
     dataInicio?: boolean
     dataFim?: boolean
-    diasSemana?: boolean
     horario?: boolean
+    diasSemana?: boolean
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     motorista?: boolean | MotoristaDefaultArgs<ExtArgs>
     carro?: boolean | CarroDefaultArgs<ExtArgs>
@@ -20920,8 +20998,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: boolean
     dataInicio?: boolean
     dataFim?: boolean
-    diasSemana?: boolean
     horario?: boolean
+    diasSemana?: boolean
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     motorista?: boolean | MotoristaDefaultArgs<ExtArgs>
     carro?: boolean | CarroDefaultArgs<ExtArgs>
@@ -20951,8 +21029,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: boolean
     dataInicio?: boolean
     dataFim?: boolean
-    diasSemana?: boolean
     horario?: boolean
+    diasSemana?: boolean
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     motorista?: boolean | MotoristaDefaultArgs<ExtArgs>
     carro?: boolean | CarroDefaultArgs<ExtArgs>
@@ -20982,11 +21060,11 @@ export namespace Prisma {
     valorTempoParadoRepasse?: boolean
     dataInicio?: boolean
     dataFim?: boolean
-    diasSemana?: boolean
     horario?: boolean
+    diasSemana?: boolean
   }
 
-  export type ModeloVoucherFixoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomeModelo" | "ativo" | "empresaClienteId" | "motoristaId" | "carroId" | "adminUsuarioId" | "operadoraId" | "tipoCorrida" | "origem" | "destino" | "valorViagem" | "valorViagemRepasse" | "valorPedagio" | "valorPedagioRepasse" | "valorEstacionamento" | "valorEstacionamentoRepasse" | "valorTempoParado" | "valorTempoParadoRepasse" | "dataInicio" | "dataFim" | "diasSemana" | "horario", ExtArgs["result"]["modeloVoucherFixo"]>
+  export type ModeloVoucherFixoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "nomeModelo" | "ativo" | "empresaClienteId" | "motoristaId" | "carroId" | "adminUsuarioId" | "operadoraId" | "tipoCorrida" | "origem" | "destino" | "valorViagem" | "valorViagemRepasse" | "valorPedagio" | "valorPedagioRepasse" | "valorEstacionamento" | "valorEstacionamentoRepasse" | "valorTempoParado" | "valorTempoParadoRepasse" | "dataInicio" | "dataFim" | "horario" | "diasSemana", ExtArgs["result"]["modeloVoucherFixo"]>
   export type ModeloVoucherFixoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
     motorista?: boolean | MotoristaDefaultArgs<ExtArgs>
@@ -21043,8 +21121,8 @@ export namespace Prisma {
       valorTempoParadoRepasse: Prisma.Decimal
       dataInicio: Date
       dataFim: Date | null
-      diasSemana: $Enums.DiaDaSemana[]
       horario: Date
+      diasSemana: $Enums.DiaDaSemana[]
     }, ExtArgs["result"]["modeloVoucherFixo"]>
     composites: {}
   }
@@ -21495,8 +21573,8 @@ export namespace Prisma {
     readonly valorTempoParadoRepasse: FieldRef<"ModeloVoucherFixo", 'Decimal'>
     readonly dataInicio: FieldRef<"ModeloVoucherFixo", 'DateTime'>
     readonly dataFim: FieldRef<"ModeloVoucherFixo", 'DateTime'>
-    readonly diasSemana: FieldRef<"ModeloVoucherFixo", 'DiaDaSemana[]'>
     readonly horario: FieldRef<"ModeloVoucherFixo", 'DateTime'>
+    readonly diasSemana: FieldRef<"ModeloVoucherFixo", 'DiaDaSemana[]'>
   }
     
 
@@ -23127,27 +23205,27 @@ export namespace Prisma {
     id: number | null
     voucherId: number | null
     passageiroId: bigint | null
-    statusPresenca: $Enums.StatusPresenca | null
     horarioEmbarqueReal: Date | null
     observacao: string | null
+    statusPresenca: $Enums.StatusPresenca | null
   }
 
   export type VoucherPassageiroMaxAggregateOutputType = {
     id: number | null
     voucherId: number | null
     passageiroId: bigint | null
-    statusPresenca: $Enums.StatusPresenca | null
     horarioEmbarqueReal: Date | null
     observacao: string | null
+    statusPresenca: $Enums.StatusPresenca | null
   }
 
   export type VoucherPassageiroCountAggregateOutputType = {
     id: number
     voucherId: number
     passageiroId: number
-    statusPresenca: number
     horarioEmbarqueReal: number
     observacao: number
+    statusPresenca: number
     _all: number
   }
 
@@ -23168,27 +23246,27 @@ export namespace Prisma {
     id?: true
     voucherId?: true
     passageiroId?: true
-    statusPresenca?: true
     horarioEmbarqueReal?: true
     observacao?: true
+    statusPresenca?: true
   }
 
   export type VoucherPassageiroMaxAggregateInputType = {
     id?: true
     voucherId?: true
     passageiroId?: true
-    statusPresenca?: true
     horarioEmbarqueReal?: true
     observacao?: true
+    statusPresenca?: true
   }
 
   export type VoucherPassageiroCountAggregateInputType = {
     id?: true
     voucherId?: true
     passageiroId?: true
-    statusPresenca?: true
     horarioEmbarqueReal?: true
     observacao?: true
+    statusPresenca?: true
     _all?: true
   }
 
@@ -23282,9 +23360,9 @@ export namespace Prisma {
     id: number
     voucherId: number
     passageiroId: bigint
-    statusPresenca: $Enums.StatusPresenca
     horarioEmbarqueReal: Date | null
     observacao: string | null
+    statusPresenca: $Enums.StatusPresenca
     _count: VoucherPassageiroCountAggregateOutputType | null
     _avg: VoucherPassageiroAvgAggregateOutputType | null
     _sum: VoucherPassageiroSumAggregateOutputType | null
@@ -23310,9 +23388,9 @@ export namespace Prisma {
     id?: boolean
     voucherId?: boolean
     passageiroId?: boolean
-    statusPresenca?: boolean
     horarioEmbarqueReal?: boolean
     observacao?: boolean
+    statusPresenca?: boolean
     voucher?: boolean | VoucherDefaultArgs<ExtArgs>
     passageiro?: boolean | PassageiroDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["voucherPassageiro"]>
@@ -23321,9 +23399,9 @@ export namespace Prisma {
     id?: boolean
     voucherId?: boolean
     passageiroId?: boolean
-    statusPresenca?: boolean
     horarioEmbarqueReal?: boolean
     observacao?: boolean
+    statusPresenca?: boolean
     voucher?: boolean | VoucherDefaultArgs<ExtArgs>
     passageiro?: boolean | PassageiroDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["voucherPassageiro"]>
@@ -23332,9 +23410,9 @@ export namespace Prisma {
     id?: boolean
     voucherId?: boolean
     passageiroId?: boolean
-    statusPresenca?: boolean
     horarioEmbarqueReal?: boolean
     observacao?: boolean
+    statusPresenca?: boolean
     voucher?: boolean | VoucherDefaultArgs<ExtArgs>
     passageiro?: boolean | PassageiroDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["voucherPassageiro"]>
@@ -23343,12 +23421,12 @@ export namespace Prisma {
     id?: boolean
     voucherId?: boolean
     passageiroId?: boolean
-    statusPresenca?: boolean
     horarioEmbarqueReal?: boolean
     observacao?: boolean
+    statusPresenca?: boolean
   }
 
-  export type VoucherPassageiroOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "voucherId" | "passageiroId" | "statusPresenca" | "horarioEmbarqueReal" | "observacao", ExtArgs["result"]["voucherPassageiro"]>
+  export type VoucherPassageiroOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "voucherId" | "passageiroId" | "horarioEmbarqueReal" | "observacao" | "statusPresenca", ExtArgs["result"]["voucherPassageiro"]>
   export type VoucherPassageiroInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     voucher?: boolean | VoucherDefaultArgs<ExtArgs>
     passageiro?: boolean | PassageiroDefaultArgs<ExtArgs>
@@ -23372,9 +23450,9 @@ export namespace Prisma {
       id: number
       voucherId: number
       passageiroId: bigint
-      statusPresenca: $Enums.StatusPresenca
       horarioEmbarqueReal: Date | null
       observacao: string | null
+      statusPresenca: $Enums.StatusPresenca
     }, ExtArgs["result"]["voucherPassageiro"]>
     composites: {}
   }
@@ -23803,9 +23881,9 @@ export namespace Prisma {
     readonly id: FieldRef<"VoucherPassageiro", 'Int'>
     readonly voucherId: FieldRef<"VoucherPassageiro", 'Int'>
     readonly passageiroId: FieldRef<"VoucherPassageiro", 'BigInt'>
-    readonly statusPresenca: FieldRef<"VoucherPassageiro", 'StatusPresenca'>
     readonly horarioEmbarqueReal: FieldRef<"VoucherPassageiro", 'DateTime'>
     readonly observacao: FieldRef<"VoucherPassageiro", 'String'>
+    readonly statusPresenca: FieldRef<"VoucherPassageiro", 'StatusPresenca'>
   }
     
 
@@ -24266,9 +24344,6 @@ export namespace Prisma {
 
   export type VoucherMinAggregateOutputType = {
     id: number | null
-    natureza: $Enums.NaturezaVoucher | null
-    tipoCorrida: $Enums.TipoCorrida | null
-    status: $Enums.StatusVoucher | null
     origem: string | null
     destino: string | null
     dataHoraProgramado: Date | null
@@ -24288,13 +24363,13 @@ export namespace Prisma {
     carroId: number | null
     adminUsuarioId: bigint | null
     operadoraId: bigint | null
+    natureza: $Enums.NaturezaVoucher | null
+    tipoCorrida: $Enums.TipoCorrida | null
+    status: $Enums.StatusVoucher | null
   }
 
   export type VoucherMaxAggregateOutputType = {
     id: number | null
-    natureza: $Enums.NaturezaVoucher | null
-    tipoCorrida: $Enums.TipoCorrida | null
-    status: $Enums.StatusVoucher | null
     origem: string | null
     destino: string | null
     dataHoraProgramado: Date | null
@@ -24314,13 +24389,13 @@ export namespace Prisma {
     carroId: number | null
     adminUsuarioId: bigint | null
     operadoraId: bigint | null
+    natureza: $Enums.NaturezaVoucher | null
+    tipoCorrida: $Enums.TipoCorrida | null
+    status: $Enums.StatusVoucher | null
   }
 
   export type VoucherCountAggregateOutputType = {
     id: number
-    natureza: number
-    tipoCorrida: number
-    status: number
     origem: number
     destino: number
     dataHoraProgramado: number
@@ -24340,6 +24415,9 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: number
     operadoraId: number
+    natureza: number
+    tipoCorrida: number
+    status: number
     _all: number
   }
 
@@ -24378,9 +24456,6 @@ export namespace Prisma {
 
   export type VoucherMinAggregateInputType = {
     id?: true
-    natureza?: true
-    tipoCorrida?: true
-    status?: true
     origem?: true
     destino?: true
     dataHoraProgramado?: true
@@ -24400,13 +24475,13 @@ export namespace Prisma {
     carroId?: true
     adminUsuarioId?: true
     operadoraId?: true
+    natureza?: true
+    tipoCorrida?: true
+    status?: true
   }
 
   export type VoucherMaxAggregateInputType = {
     id?: true
-    natureza?: true
-    tipoCorrida?: true
-    status?: true
     origem?: true
     destino?: true
     dataHoraProgramado?: true
@@ -24426,13 +24501,13 @@ export namespace Prisma {
     carroId?: true
     adminUsuarioId?: true
     operadoraId?: true
+    natureza?: true
+    tipoCorrida?: true
+    status?: true
   }
 
   export type VoucherCountAggregateInputType = {
     id?: true
-    natureza?: true
-    tipoCorrida?: true
-    status?: true
     origem?: true
     destino?: true
     dataHoraProgramado?: true
@@ -24452,6 +24527,9 @@ export namespace Prisma {
     carroId?: true
     adminUsuarioId?: true
     operadoraId?: true
+    natureza?: true
+    tipoCorrida?: true
+    status?: true
     _all?: true
   }
 
@@ -24543,9 +24621,6 @@ export namespace Prisma {
 
   export type VoucherGroupByOutputType = {
     id: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date
@@ -24565,6 +24640,9 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint
     operadoraId: bigint
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     _count: VoucherCountAggregateOutputType | null
     _avg: VoucherAvgAggregateOutputType | null
     _sum: VoucherSumAggregateOutputType | null
@@ -24588,9 +24666,6 @@ export namespace Prisma {
 
   export type VoucherSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    natureza?: boolean
-    tipoCorrida?: boolean
-    status?: boolean
     origem?: boolean
     destino?: boolean
     dataHoraProgramado?: boolean
@@ -24610,6 +24685,9 @@ export namespace Prisma {
     carroId?: boolean
     adminUsuarioId?: boolean
     operadoraId?: boolean
+    natureza?: boolean
+    tipoCorrida?: boolean
+    status?: boolean
     modeloFixo?: boolean | Voucher$modeloFixoArgs<ExtArgs>
     rota?: boolean | Voucher$rotaArgs<ExtArgs>
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
@@ -24623,9 +24701,6 @@ export namespace Prisma {
 
   export type VoucherSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    natureza?: boolean
-    tipoCorrida?: boolean
-    status?: boolean
     origem?: boolean
     destino?: boolean
     dataHoraProgramado?: boolean
@@ -24645,6 +24720,9 @@ export namespace Prisma {
     carroId?: boolean
     adminUsuarioId?: boolean
     operadoraId?: boolean
+    natureza?: boolean
+    tipoCorrida?: boolean
+    status?: boolean
     modeloFixo?: boolean | Voucher$modeloFixoArgs<ExtArgs>
     rota?: boolean | Voucher$rotaArgs<ExtArgs>
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
@@ -24656,9 +24734,6 @@ export namespace Prisma {
 
   export type VoucherSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    natureza?: boolean
-    tipoCorrida?: boolean
-    status?: boolean
     origem?: boolean
     destino?: boolean
     dataHoraProgramado?: boolean
@@ -24678,6 +24753,9 @@ export namespace Prisma {
     carroId?: boolean
     adminUsuarioId?: boolean
     operadoraId?: boolean
+    natureza?: boolean
+    tipoCorrida?: boolean
+    status?: boolean
     modeloFixo?: boolean | Voucher$modeloFixoArgs<ExtArgs>
     rota?: boolean | Voucher$rotaArgs<ExtArgs>
     empresaCliente?: boolean | EmpresaClienteDefaultArgs<ExtArgs>
@@ -24689,9 +24767,6 @@ export namespace Prisma {
 
   export type VoucherSelectScalar = {
     id?: boolean
-    natureza?: boolean
-    tipoCorrida?: boolean
-    status?: boolean
     origem?: boolean
     destino?: boolean
     dataHoraProgramado?: boolean
@@ -24711,9 +24786,12 @@ export namespace Prisma {
     carroId?: boolean
     adminUsuarioId?: boolean
     operadoraId?: boolean
+    natureza?: boolean
+    tipoCorrida?: boolean
+    status?: boolean
   }
 
-  export type VoucherOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "natureza" | "tipoCorrida" | "status" | "origem" | "destino" | "dataHoraProgramado" | "dataHoraConclusao" | "dataHoraCriacao" | "valorViagem" | "valorRepasseMotorista" | "valorPedagio" | "valorEstacionamento" | "valorTempoParado" | "assinatura" | "observacaoMotorista" | "modeloFixoId" | "rotaId" | "empresaClienteId" | "motoristaId" | "carroId" | "adminUsuarioId" | "operadoraId", ExtArgs["result"]["voucher"]>
+  export type VoucherOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "origem" | "destino" | "dataHoraProgramado" | "dataHoraConclusao" | "dataHoraCriacao" | "valorViagem" | "valorRepasseMotorista" | "valorPedagio" | "valorEstacionamento" | "valorTempoParado" | "assinatura" | "observacaoMotorista" | "modeloFixoId" | "rotaId" | "empresaClienteId" | "motoristaId" | "carroId" | "adminUsuarioId" | "operadoraId" | "natureza" | "tipoCorrida" | "status", ExtArgs["result"]["voucher"]>
   export type VoucherInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     modeloFixo?: boolean | Voucher$modeloFixoArgs<ExtArgs>
     rota?: boolean | Voucher$rotaArgs<ExtArgs>
@@ -24758,9 +24836,6 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      natureza: $Enums.NaturezaVoucher
-      tipoCorrida: $Enums.TipoCorrida
-      status: $Enums.StatusVoucher
       origem: string
       destino: string
       dataHoraProgramado: Date
@@ -24780,6 +24855,9 @@ export namespace Prisma {
       carroId: number
       adminUsuarioId: bigint
       operadoraId: bigint
+      natureza: $Enums.NaturezaVoucher
+      tipoCorrida: $Enums.TipoCorrida
+      status: $Enums.StatusVoucher
     }, ExtArgs["result"]["voucher"]>
     composites: {}
   }
@@ -25212,9 +25290,6 @@ export namespace Prisma {
    */
   interface VoucherFieldRefs {
     readonly id: FieldRef<"Voucher", 'Int'>
-    readonly natureza: FieldRef<"Voucher", 'NaturezaVoucher'>
-    readonly tipoCorrida: FieldRef<"Voucher", 'TipoCorrida'>
-    readonly status: FieldRef<"Voucher", 'StatusVoucher'>
     readonly origem: FieldRef<"Voucher", 'String'>
     readonly destino: FieldRef<"Voucher", 'String'>
     readonly dataHoraProgramado: FieldRef<"Voucher", 'DateTime'>
@@ -25234,6 +25309,9 @@ export namespace Prisma {
     readonly carroId: FieldRef<"Voucher", 'Int'>
     readonly adminUsuarioId: FieldRef<"Voucher", 'BigInt'>
     readonly operadoraId: FieldRef<"Voucher", 'BigInt'>
+    readonly natureza: FieldRef<"Voucher", 'NaturezaVoucher'>
+    readonly tipoCorrida: FieldRef<"Voucher", 'TipoCorrida'>
+    readonly status: FieldRef<"Voucher", 'StatusVoucher'>
   }
     
 
@@ -25863,11 +25941,11 @@ export namespace Prisma {
     email: 'email',
     senha: 'senha',
     empresaClienteId: 'empresaClienteId',
-    funcao: 'funcao',
     fotoUrlSolicitante: 'fotoUrlSolicitante',
     statusSolicitante: 'statusSolicitante',
     operadoraId: 'operadoraId',
-    telefone: 'telefone'
+    telefone: 'telefone',
+    funcao: 'funcao'
   };
 
   export type SolicitanteScalarFieldEnum = (typeof SolicitanteScalarFieldEnum)[keyof typeof SolicitanteScalarFieldEnum]
@@ -25882,7 +25960,13 @@ export namespace Prisma {
     ativo: 'ativo',
     empresaClienteId: 'empresaClienteId',
     centroCustoClienteId: 'centroCustoClienteId',
-    fotoPerfilPassageiro: 'fotoPerfilPassageiro'
+    fotoPerfilPassageiro: 'fotoPerfilPassageiro',
+    endRua: 'endRua',
+    endNumero: 'endNumero',
+    endBairro: 'endBairro',
+    endCidade: 'endCidade',
+    pontoApanha: 'pontoApanha',
+    horarioEmbarque: 'horarioEmbarque'
   };
 
   export type PassageiroScalarFieldEnum = (typeof PassageiroScalarFieldEnum)[keyof typeof PassageiroScalarFieldEnum]
@@ -25912,7 +25996,6 @@ export namespace Prisma {
   export const RotaValorScalarFieldEnum: {
     id: 'id',
     rotaId: 'rotaId',
-    categoria: 'categoria',
     empresaClienteId: 'empresaClienteId',
     operadoraId: 'operadoraId',
     valorViagem: 'valorViagem',
@@ -25921,7 +26004,8 @@ export namespace Prisma {
     valorHoraParadaRepasse: 'valorHoraParadaRepasse',
     valorDeslocamento: 'valorDeslocamento',
     valorDeslocamentoRepasse: 'valorDeslocamentoRepasse',
-    valorPedagio: 'valorPedagio'
+    valorPedagio: 'valorPedagio',
+    categoria: 'categoria'
   };
 
   export type RotaValorScalarFieldEnum = (typeof RotaValorScalarFieldEnum)[keyof typeof RotaValorScalarFieldEnum]
@@ -25949,8 +26033,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: 'valorTempoParadoRepasse',
     dataInicio: 'dataInicio',
     dataFim: 'dataFim',
-    diasSemana: 'diasSemana',
-    horario: 'horario'
+    horario: 'horario',
+    diasSemana: 'diasSemana'
   };
 
   export type ModeloVoucherFixoScalarFieldEnum = (typeof ModeloVoucherFixoScalarFieldEnum)[keyof typeof ModeloVoucherFixoScalarFieldEnum]
@@ -25970,9 +26054,9 @@ export namespace Prisma {
     id: 'id',
     voucherId: 'voucherId',
     passageiroId: 'passageiroId',
-    statusPresenca: 'statusPresenca',
     horarioEmbarqueReal: 'horarioEmbarqueReal',
-    observacao: 'observacao'
+    observacao: 'observacao',
+    statusPresenca: 'statusPresenca'
   };
 
   export type VoucherPassageiroScalarFieldEnum = (typeof VoucherPassageiroScalarFieldEnum)[keyof typeof VoucherPassageiroScalarFieldEnum]
@@ -25980,9 +26064,6 @@ export namespace Prisma {
 
   export const VoucherScalarFieldEnum: {
     id: 'id',
-    natureza: 'natureza',
-    tipoCorrida: 'tipoCorrida',
-    status: 'status',
     origem: 'origem',
     destino: 'destino',
     dataHoraProgramado: 'dataHoraProgramado',
@@ -26001,7 +26082,10 @@ export namespace Prisma {
     motoristaId: 'motoristaId',
     carroId: 'carroId',
     adminUsuarioId: 'adminUsuarioId',
-    operadoraId: 'operadoraId'
+    operadoraId: 'operadoraId',
+    natureza: 'natureza',
+    tipoCorrida: 'tipoCorrida',
+    status: 'status'
   };
 
   export type VoucherScalarFieldEnum = (typeof VoucherScalarFieldEnum)[keyof typeof VoucherScalarFieldEnum]
@@ -26496,10 +26580,10 @@ export namespace Prisma {
     dataCriacao?: DateTimeNullableFilter<"Motorista"> | Date | string | null
     operadoraId?: BigIntNullableFilter<"Motorista"> | bigint | number | null
     statusCnh?: BoolNullableFilter<"Motorista"> | boolean | null
-    operadora?: XOR<OperadoraNullableScalarRelationFilter, OperadoraWhereInput> | null
     carro?: CarroListRelationFilter
     modeloVoucherFixo?: ModeloVoucherFixoListRelationFilter
     voucher?: VoucherListRelationFilter
+    operadora?: XOR<OperadoraNullableScalarRelationFilter, OperadoraWhereInput> | null
     agregadoRelacao?: RelacaoAgrdFuncListRelationFilter
     funcionarioRelacao?: RelacaoAgrdFuncListRelationFilter
   }
@@ -26518,10 +26602,10 @@ export namespace Prisma {
     dataCriacao?: SortOrderInput | SortOrder
     operadoraId?: SortOrderInput | SortOrder
     statusCnh?: SortOrderInput | SortOrder
-    operadora?: OperadoraOrderByWithRelationInput
     carro?: CarroOrderByRelationAggregateInput
     modeloVoucherFixo?: ModeloVoucherFixoOrderByRelationAggregateInput
     voucher?: VoucherOrderByRelationAggregateInput
+    operadora?: OperadoraOrderByWithRelationInput
     agregadoRelacao?: RelacaoAgrdFuncOrderByRelationAggregateInput
     funcionarioRelacao?: RelacaoAgrdFuncOrderByRelationAggregateInput
   }
@@ -26543,10 +26627,10 @@ export namespace Prisma {
     dataCriacao?: DateTimeNullableFilter<"Motorista"> | Date | string | null
     operadoraId?: BigIntNullableFilter<"Motorista"> | bigint | number | null
     statusCnh?: BoolNullableFilter<"Motorista"> | boolean | null
-    operadora?: XOR<OperadoraNullableScalarRelationFilter, OperadoraWhereInput> | null
     carro?: CarroListRelationFilter
     modeloVoucherFixo?: ModeloVoucherFixoListRelationFilter
     voucher?: VoucherListRelationFilter
+    operadora?: XOR<OperadoraNullableScalarRelationFilter, OperadoraWhereInput> | null
     agregadoRelacao?: RelacaoAgrdFuncListRelationFilter
     funcionarioRelacao?: RelacaoAgrdFuncListRelationFilter
   }, "id" | "email">
@@ -27033,11 +27117,11 @@ export namespace Prisma {
     email?: StringFilter<"Solicitante"> | string
     senha?: StringFilter<"Solicitante"> | string
     empresaClienteId?: BigIntFilter<"Solicitante"> | bigint | number
-    funcao?: EnumFuncaoSolicitanteFilter<"Solicitante"> | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: StringNullableFilter<"Solicitante"> | string | null
     statusSolicitante?: BoolFilter<"Solicitante"> | boolean
     operadoraId?: BigIntNullableFilter<"Solicitante"> | bigint | number | null
     telefone?: StringNullableFilter<"Solicitante"> | string | null
+    funcao?: EnumFuncaoSolicitanteFilter<"Solicitante"> | $Enums.FuncaoSolicitante
     empresaCliente?: XOR<EmpresaClienteScalarRelationFilter, EmpresaClienteWhereInput>
     operadora?: XOR<OperadoraNullableScalarRelationFilter, OperadoraWhereInput> | null
   }
@@ -27048,11 +27132,11 @@ export namespace Prisma {
     email?: SortOrder
     senha?: SortOrder
     empresaClienteId?: SortOrder
-    funcao?: SortOrder
     fotoUrlSolicitante?: SortOrderInput | SortOrder
     statusSolicitante?: SortOrder
     operadoraId?: SortOrderInput | SortOrder
     telefone?: SortOrderInput | SortOrder
+    funcao?: SortOrder
     empresaCliente?: EmpresaClienteOrderByWithRelationInput
     operadora?: OperadoraOrderByWithRelationInput
   }
@@ -27066,11 +27150,11 @@ export namespace Prisma {
     nome?: StringFilter<"Solicitante"> | string
     senha?: StringFilter<"Solicitante"> | string
     empresaClienteId?: BigIntFilter<"Solicitante"> | bigint | number
-    funcao?: EnumFuncaoSolicitanteFilter<"Solicitante"> | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: StringNullableFilter<"Solicitante"> | string | null
     statusSolicitante?: BoolFilter<"Solicitante"> | boolean
     operadoraId?: BigIntNullableFilter<"Solicitante"> | bigint | number | null
     telefone?: StringNullableFilter<"Solicitante"> | string | null
+    funcao?: EnumFuncaoSolicitanteFilter<"Solicitante"> | $Enums.FuncaoSolicitante
     empresaCliente?: XOR<EmpresaClienteScalarRelationFilter, EmpresaClienteWhereInput>
     operadora?: XOR<OperadoraNullableScalarRelationFilter, OperadoraWhereInput> | null
   }, "id" | "email">
@@ -27081,11 +27165,11 @@ export namespace Prisma {
     email?: SortOrder
     senha?: SortOrder
     empresaClienteId?: SortOrder
-    funcao?: SortOrder
     fotoUrlSolicitante?: SortOrderInput | SortOrder
     statusSolicitante?: SortOrder
     operadoraId?: SortOrderInput | SortOrder
     telefone?: SortOrderInput | SortOrder
+    funcao?: SortOrder
     _count?: SolicitanteCountOrderByAggregateInput
     _avg?: SolicitanteAvgOrderByAggregateInput
     _max?: SolicitanteMaxOrderByAggregateInput
@@ -27102,11 +27186,11 @@ export namespace Prisma {
     email?: StringWithAggregatesFilter<"Solicitante"> | string
     senha?: StringWithAggregatesFilter<"Solicitante"> | string
     empresaClienteId?: BigIntWithAggregatesFilter<"Solicitante"> | bigint | number
-    funcao?: EnumFuncaoSolicitanteWithAggregatesFilter<"Solicitante"> | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: StringNullableWithAggregatesFilter<"Solicitante"> | string | null
     statusSolicitante?: BoolWithAggregatesFilter<"Solicitante"> | boolean
     operadoraId?: BigIntNullableWithAggregatesFilter<"Solicitante"> | bigint | number | null
     telefone?: StringNullableWithAggregatesFilter<"Solicitante"> | string | null
+    funcao?: EnumFuncaoSolicitanteWithAggregatesFilter<"Solicitante"> | $Enums.FuncaoSolicitante
   }
 
   export type PassageiroWhereInput = {
@@ -27122,6 +27206,12 @@ export namespace Prisma {
     empresaClienteId?: BigIntFilter<"Passageiro"> | bigint | number
     centroCustoClienteId?: BigIntFilter<"Passageiro"> | bigint | number
     fotoPerfilPassageiro?: StringNullableFilter<"Passageiro"> | string | null
+    endRua?: StringNullableFilter<"Passageiro"> | string | null
+    endNumero?: StringNullableFilter<"Passageiro"> | string | null
+    endBairro?: StringNullableFilter<"Passageiro"> | string | null
+    endCidade?: StringNullableFilter<"Passageiro"> | string | null
+    pontoApanha?: StringNullableFilter<"Passageiro"> | string | null
+    horarioEmbarque?: StringNullableFilter<"Passageiro"> | string | null
     empresaCliente?: XOR<EmpresaClienteScalarRelationFilter, EmpresaClienteWhereInput>
     centroCustoCliente?: XOR<CentroCustoClienteScalarRelationFilter, CentroCustoClienteWhereInput>
     viagens?: VoucherPassageiroListRelationFilter
@@ -27137,6 +27227,12 @@ export namespace Prisma {
     empresaClienteId?: SortOrder
     centroCustoClienteId?: SortOrder
     fotoPerfilPassageiro?: SortOrderInput | SortOrder
+    endRua?: SortOrderInput | SortOrder
+    endNumero?: SortOrderInput | SortOrder
+    endBairro?: SortOrderInput | SortOrder
+    endCidade?: SortOrderInput | SortOrder
+    pontoApanha?: SortOrderInput | SortOrder
+    horarioEmbarque?: SortOrderInput | SortOrder
     empresaCliente?: EmpresaClienteOrderByWithRelationInput
     centroCustoCliente?: CentroCustoClienteOrderByWithRelationInput
     viagens?: VoucherPassageiroOrderByRelationAggregateInput
@@ -27155,6 +27251,12 @@ export namespace Prisma {
     empresaClienteId?: BigIntFilter<"Passageiro"> | bigint | number
     centroCustoClienteId?: BigIntFilter<"Passageiro"> | bigint | number
     fotoPerfilPassageiro?: StringNullableFilter<"Passageiro"> | string | null
+    endRua?: StringNullableFilter<"Passageiro"> | string | null
+    endNumero?: StringNullableFilter<"Passageiro"> | string | null
+    endBairro?: StringNullableFilter<"Passageiro"> | string | null
+    endCidade?: StringNullableFilter<"Passageiro"> | string | null
+    pontoApanha?: StringNullableFilter<"Passageiro"> | string | null
+    horarioEmbarque?: StringNullableFilter<"Passageiro"> | string | null
     empresaCliente?: XOR<EmpresaClienteScalarRelationFilter, EmpresaClienteWhereInput>
     centroCustoCliente?: XOR<CentroCustoClienteScalarRelationFilter, CentroCustoClienteWhereInput>
     viagens?: VoucherPassageiroListRelationFilter
@@ -27170,6 +27272,12 @@ export namespace Prisma {
     empresaClienteId?: SortOrder
     centroCustoClienteId?: SortOrder
     fotoPerfilPassageiro?: SortOrderInput | SortOrder
+    endRua?: SortOrderInput | SortOrder
+    endNumero?: SortOrderInput | SortOrder
+    endBairro?: SortOrderInput | SortOrder
+    endCidade?: SortOrderInput | SortOrder
+    pontoApanha?: SortOrderInput | SortOrder
+    horarioEmbarque?: SortOrderInput | SortOrder
     _count?: PassageiroCountOrderByAggregateInput
     _avg?: PassageiroAvgOrderByAggregateInput
     _max?: PassageiroMaxOrderByAggregateInput
@@ -27190,6 +27298,12 @@ export namespace Prisma {
     empresaClienteId?: BigIntWithAggregatesFilter<"Passageiro"> | bigint | number
     centroCustoClienteId?: BigIntWithAggregatesFilter<"Passageiro"> | bigint | number
     fotoPerfilPassageiro?: StringNullableWithAggregatesFilter<"Passageiro"> | string | null
+    endRua?: StringNullableWithAggregatesFilter<"Passageiro"> | string | null
+    endNumero?: StringNullableWithAggregatesFilter<"Passageiro"> | string | null
+    endBairro?: StringNullableWithAggregatesFilter<"Passageiro"> | string | null
+    endCidade?: StringNullableWithAggregatesFilter<"Passageiro"> | string | null
+    pontoApanha?: StringNullableWithAggregatesFilter<"Passageiro"> | string | null
+    horarioEmbarque?: StringNullableWithAggregatesFilter<"Passageiro"> | string | null
   }
 
   export type RotaWhereInput = {
@@ -27319,7 +27433,6 @@ export namespace Prisma {
     NOT?: RotaValorWhereInput | RotaValorWhereInput[]
     id?: IntFilter<"RotaValor"> | number
     rotaId?: IntFilter<"RotaValor"> | number
-    categoria?: EnumCategoriasCarrosFilter<"RotaValor"> | $Enums.CategoriasCarros
     empresaClienteId?: BigIntNullableFilter<"RotaValor"> | bigint | number | null
     operadoraId?: BigIntNullableFilter<"RotaValor"> | bigint | number | null
     valorViagem?: DecimalFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
@@ -27329,6 +27442,7 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
     valorPedagio?: IntNullableFilter<"RotaValor"> | number | null
+    categoria?: EnumCategoriasCarrosFilter<"RotaValor"> | $Enums.CategoriasCarros
     rota?: XOR<RotaScalarRelationFilter, RotaWhereInput>
     empresaCliente?: XOR<EmpresaClienteNullableScalarRelationFilter, EmpresaClienteWhereInput> | null
     operadora?: XOR<OperadoraNullableScalarRelationFilter, OperadoraWhereInput> | null
@@ -27338,7 +27452,6 @@ export namespace Prisma {
   export type RotaValorOrderByWithRelationInput = {
     id?: SortOrder
     rotaId?: SortOrder
-    categoria?: SortOrder
     empresaClienteId?: SortOrderInput | SortOrder
     operadoraId?: SortOrderInput | SortOrder
     valorViagem?: SortOrder
@@ -27348,6 +27461,7 @@ export namespace Prisma {
     valorDeslocamento?: SortOrder
     valorDeslocamentoRepasse?: SortOrder
     valorPedagio?: SortOrderInput | SortOrder
+    categoria?: SortOrder
     rota?: RotaOrderByWithRelationInput
     empresaCliente?: EmpresaClienteOrderByWithRelationInput
     operadora?: OperadoraOrderByWithRelationInput
@@ -27360,7 +27474,6 @@ export namespace Prisma {
     OR?: RotaValorWhereInput[]
     NOT?: RotaValorWhereInput | RotaValorWhereInput[]
     rotaId?: IntFilter<"RotaValor"> | number
-    categoria?: EnumCategoriasCarrosFilter<"RotaValor"> | $Enums.CategoriasCarros
     empresaClienteId?: BigIntNullableFilter<"RotaValor"> | bigint | number | null
     operadoraId?: BigIntNullableFilter<"RotaValor"> | bigint | number | null
     valorViagem?: DecimalFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
@@ -27370,6 +27483,7 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
     valorPedagio?: IntNullableFilter<"RotaValor"> | number | null
+    categoria?: EnumCategoriasCarrosFilter<"RotaValor"> | $Enums.CategoriasCarros
     rota?: XOR<RotaScalarRelationFilter, RotaWhereInput>
     empresaCliente?: XOR<EmpresaClienteNullableScalarRelationFilter, EmpresaClienteWhereInput> | null
     operadora?: XOR<OperadoraNullableScalarRelationFilter, OperadoraWhereInput> | null
@@ -27379,7 +27493,6 @@ export namespace Prisma {
   export type RotaValorOrderByWithAggregationInput = {
     id?: SortOrder
     rotaId?: SortOrder
-    categoria?: SortOrder
     empresaClienteId?: SortOrderInput | SortOrder
     operadoraId?: SortOrderInput | SortOrder
     valorViagem?: SortOrder
@@ -27389,6 +27502,7 @@ export namespace Prisma {
     valorDeslocamento?: SortOrder
     valorDeslocamentoRepasse?: SortOrder
     valorPedagio?: SortOrderInput | SortOrder
+    categoria?: SortOrder
     _count?: RotaValorCountOrderByAggregateInput
     _avg?: RotaValorAvgOrderByAggregateInput
     _max?: RotaValorMaxOrderByAggregateInput
@@ -27402,7 +27516,6 @@ export namespace Prisma {
     NOT?: RotaValorScalarWhereWithAggregatesInput | RotaValorScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"RotaValor"> | number
     rotaId?: IntWithAggregatesFilter<"RotaValor"> | number
-    categoria?: EnumCategoriasCarrosWithAggregatesFilter<"RotaValor"> | $Enums.CategoriasCarros
     empresaClienteId?: BigIntNullableWithAggregatesFilter<"RotaValor"> | bigint | number | null
     operadoraId?: BigIntNullableWithAggregatesFilter<"RotaValor"> | bigint | number | null
     valorViagem?: DecimalWithAggregatesFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
@@ -27412,6 +27525,7 @@ export namespace Prisma {
     valorDeslocamento?: DecimalWithAggregatesFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalWithAggregatesFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
     valorPedagio?: IntNullableWithAggregatesFilter<"RotaValor"> | number | null
+    categoria?: EnumCategoriasCarrosWithAggregatesFilter<"RotaValor"> | $Enums.CategoriasCarros
   }
 
   export type ModeloVoucherFixoWhereInput = {
@@ -27439,8 +27553,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFilter<"ModeloVoucherFixo"> | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFilter<"ModeloVoucherFixo"> | Date | string
     dataFim?: DateTimeNullableFilter<"ModeloVoucherFixo"> | Date | string | null
-    diasSemana?: EnumDiaDaSemanaNullableListFilter<"ModeloVoucherFixo">
     horario?: DateTimeFilter<"ModeloVoucherFixo"> | Date | string
+    diasSemana?: EnumDiaDaSemanaNullableListFilter<"ModeloVoucherFixo">
     empresaCliente?: XOR<EmpresaClienteScalarRelationFilter, EmpresaClienteWhereInput>
     motorista?: XOR<MotoristaScalarRelationFilter, MotoristaWhereInput>
     carro?: XOR<CarroScalarRelationFilter, CarroWhereInput>
@@ -27471,8 +27585,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: SortOrder
     dataInicio?: SortOrder
     dataFim?: SortOrderInput | SortOrder
-    diasSemana?: SortOrder
     horario?: SortOrder
+    diasSemana?: SortOrder
     empresaCliente?: EmpresaClienteOrderByWithRelationInput
     motorista?: MotoristaOrderByWithRelationInput
     carro?: CarroOrderByWithRelationInput
@@ -27506,8 +27620,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFilter<"ModeloVoucherFixo"> | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFilter<"ModeloVoucherFixo"> | Date | string
     dataFim?: DateTimeNullableFilter<"ModeloVoucherFixo"> | Date | string | null
-    diasSemana?: EnumDiaDaSemanaNullableListFilter<"ModeloVoucherFixo">
     horario?: DateTimeFilter<"ModeloVoucherFixo"> | Date | string
+    diasSemana?: EnumDiaDaSemanaNullableListFilter<"ModeloVoucherFixo">
     empresaCliente?: XOR<EmpresaClienteScalarRelationFilter, EmpresaClienteWhereInput>
     motorista?: XOR<MotoristaScalarRelationFilter, MotoristaWhereInput>
     carro?: XOR<CarroScalarRelationFilter, CarroWhereInput>
@@ -27538,8 +27652,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: SortOrder
     dataInicio?: SortOrder
     dataFim?: SortOrderInput | SortOrder
-    diasSemana?: SortOrder
     horario?: SortOrder
+    diasSemana?: SortOrder
     _count?: ModeloVoucherFixoCountOrderByAggregateInput
     _avg?: ModeloVoucherFixoAvgOrderByAggregateInput
     _max?: ModeloVoucherFixoMaxOrderByAggregateInput
@@ -27572,8 +27686,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalWithAggregatesFilter<"ModeloVoucherFixo"> | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeWithAggregatesFilter<"ModeloVoucherFixo"> | Date | string
     dataFim?: DateTimeNullableWithAggregatesFilter<"ModeloVoucherFixo"> | Date | string | null
-    diasSemana?: EnumDiaDaSemanaNullableListFilter<"ModeloVoucherFixo">
     horario?: DateTimeWithAggregatesFilter<"ModeloVoucherFixo"> | Date | string
+    diasSemana?: EnumDiaDaSemanaNullableListFilter<"ModeloVoucherFixo">
   }
 
   export type RelacaoAgrdFuncWhereInput = {
@@ -27641,9 +27755,9 @@ export namespace Prisma {
     id?: IntFilter<"VoucherPassageiro"> | number
     voucherId?: IntFilter<"VoucherPassageiro"> | number
     passageiroId?: BigIntFilter<"VoucherPassageiro"> | bigint | number
-    statusPresenca?: EnumStatusPresencaFilter<"VoucherPassageiro"> | $Enums.StatusPresenca
     horarioEmbarqueReal?: DateTimeNullableFilter<"VoucherPassageiro"> | Date | string | null
     observacao?: StringNullableFilter<"VoucherPassageiro"> | string | null
+    statusPresenca?: EnumStatusPresencaFilter<"VoucherPassageiro"> | $Enums.StatusPresenca
     voucher?: XOR<VoucherScalarRelationFilter, VoucherWhereInput>
     passageiro?: XOR<PassageiroScalarRelationFilter, PassageiroWhereInput>
   }
@@ -27652,9 +27766,9 @@ export namespace Prisma {
     id?: SortOrder
     voucherId?: SortOrder
     passageiroId?: SortOrder
-    statusPresenca?: SortOrder
     horarioEmbarqueReal?: SortOrderInput | SortOrder
     observacao?: SortOrderInput | SortOrder
+    statusPresenca?: SortOrder
     voucher?: VoucherOrderByWithRelationInput
     passageiro?: PassageiroOrderByWithRelationInput
   }
@@ -27667,9 +27781,9 @@ export namespace Prisma {
     NOT?: VoucherPassageiroWhereInput | VoucherPassageiroWhereInput[]
     voucherId?: IntFilter<"VoucherPassageiro"> | number
     passageiroId?: BigIntFilter<"VoucherPassageiro"> | bigint | number
-    statusPresenca?: EnumStatusPresencaFilter<"VoucherPassageiro"> | $Enums.StatusPresenca
     horarioEmbarqueReal?: DateTimeNullableFilter<"VoucherPassageiro"> | Date | string | null
     observacao?: StringNullableFilter<"VoucherPassageiro"> | string | null
+    statusPresenca?: EnumStatusPresencaFilter<"VoucherPassageiro"> | $Enums.StatusPresenca
     voucher?: XOR<VoucherScalarRelationFilter, VoucherWhereInput>
     passageiro?: XOR<PassageiroScalarRelationFilter, PassageiroWhereInput>
   }, "id" | "voucherId_passageiroId">
@@ -27678,9 +27792,9 @@ export namespace Prisma {
     id?: SortOrder
     voucherId?: SortOrder
     passageiroId?: SortOrder
-    statusPresenca?: SortOrder
     horarioEmbarqueReal?: SortOrderInput | SortOrder
     observacao?: SortOrderInput | SortOrder
+    statusPresenca?: SortOrder
     _count?: VoucherPassageiroCountOrderByAggregateInput
     _avg?: VoucherPassageiroAvgOrderByAggregateInput
     _max?: VoucherPassageiroMaxOrderByAggregateInput
@@ -27695,9 +27809,9 @@ export namespace Prisma {
     id?: IntWithAggregatesFilter<"VoucherPassageiro"> | number
     voucherId?: IntWithAggregatesFilter<"VoucherPassageiro"> | number
     passageiroId?: BigIntWithAggregatesFilter<"VoucherPassageiro"> | bigint | number
-    statusPresenca?: EnumStatusPresencaWithAggregatesFilter<"VoucherPassageiro"> | $Enums.StatusPresenca
     horarioEmbarqueReal?: DateTimeNullableWithAggregatesFilter<"VoucherPassageiro"> | Date | string | null
     observacao?: StringNullableWithAggregatesFilter<"VoucherPassageiro"> | string | null
+    statusPresenca?: EnumStatusPresencaWithAggregatesFilter<"VoucherPassageiro"> | $Enums.StatusPresenca
   }
 
   export type VoucherWhereInput = {
@@ -27705,9 +27819,6 @@ export namespace Prisma {
     OR?: VoucherWhereInput[]
     NOT?: VoucherWhereInput | VoucherWhereInput[]
     id?: IntFilter<"Voucher"> | number
-    natureza?: EnumNaturezaVoucherFilter<"Voucher"> | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFilter<"Voucher"> | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFilter<"Voucher"> | $Enums.StatusVoucher
     origem?: StringFilter<"Voucher"> | string
     destino?: StringFilter<"Voucher"> | string
     dataHoraProgramado?: DateTimeFilter<"Voucher"> | Date | string
@@ -27727,6 +27838,9 @@ export namespace Prisma {
     carroId?: IntFilter<"Voucher"> | number
     adminUsuarioId?: BigIntFilter<"Voucher"> | bigint | number
     operadoraId?: BigIntFilter<"Voucher"> | bigint | number
+    natureza?: EnumNaturezaVoucherFilter<"Voucher"> | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFilter<"Voucher"> | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFilter<"Voucher"> | $Enums.StatusVoucher
     modeloFixo?: XOR<ModeloVoucherFixoNullableScalarRelationFilter, ModeloVoucherFixoWhereInput> | null
     rota?: XOR<RotaNullableScalarRelationFilter, RotaWhereInput> | null
     empresaCliente?: XOR<EmpresaClienteScalarRelationFilter, EmpresaClienteWhereInput>
@@ -27739,9 +27853,6 @@ export namespace Prisma {
 
   export type VoucherOrderByWithRelationInput = {
     id?: SortOrder
-    natureza?: SortOrder
-    tipoCorrida?: SortOrder
-    status?: SortOrder
     origem?: SortOrder
     destino?: SortOrder
     dataHoraProgramado?: SortOrder
@@ -27761,6 +27872,9 @@ export namespace Prisma {
     carroId?: SortOrder
     adminUsuarioId?: SortOrder
     operadoraId?: SortOrder
+    natureza?: SortOrder
+    tipoCorrida?: SortOrder
+    status?: SortOrder
     modeloFixo?: ModeloVoucherFixoOrderByWithRelationInput
     rota?: RotaOrderByWithRelationInput
     empresaCliente?: EmpresaClienteOrderByWithRelationInput
@@ -27776,9 +27890,6 @@ export namespace Prisma {
     AND?: VoucherWhereInput | VoucherWhereInput[]
     OR?: VoucherWhereInput[]
     NOT?: VoucherWhereInput | VoucherWhereInput[]
-    natureza?: EnumNaturezaVoucherFilter<"Voucher"> | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFilter<"Voucher"> | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFilter<"Voucher"> | $Enums.StatusVoucher
     origem?: StringFilter<"Voucher"> | string
     destino?: StringFilter<"Voucher"> | string
     dataHoraProgramado?: DateTimeFilter<"Voucher"> | Date | string
@@ -27798,6 +27909,9 @@ export namespace Prisma {
     carroId?: IntFilter<"Voucher"> | number
     adminUsuarioId?: BigIntFilter<"Voucher"> | bigint | number
     operadoraId?: BigIntFilter<"Voucher"> | bigint | number
+    natureza?: EnumNaturezaVoucherFilter<"Voucher"> | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFilter<"Voucher"> | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFilter<"Voucher"> | $Enums.StatusVoucher
     modeloFixo?: XOR<ModeloVoucherFixoNullableScalarRelationFilter, ModeloVoucherFixoWhereInput> | null
     rota?: XOR<RotaNullableScalarRelationFilter, RotaWhereInput> | null
     empresaCliente?: XOR<EmpresaClienteScalarRelationFilter, EmpresaClienteWhereInput>
@@ -27810,9 +27924,6 @@ export namespace Prisma {
 
   export type VoucherOrderByWithAggregationInput = {
     id?: SortOrder
-    natureza?: SortOrder
-    tipoCorrida?: SortOrder
-    status?: SortOrder
     origem?: SortOrder
     destino?: SortOrder
     dataHoraProgramado?: SortOrder
@@ -27832,6 +27943,9 @@ export namespace Prisma {
     carroId?: SortOrder
     adminUsuarioId?: SortOrder
     operadoraId?: SortOrder
+    natureza?: SortOrder
+    tipoCorrida?: SortOrder
+    status?: SortOrder
     _count?: VoucherCountOrderByAggregateInput
     _avg?: VoucherAvgOrderByAggregateInput
     _max?: VoucherMaxOrderByAggregateInput
@@ -27844,9 +27958,6 @@ export namespace Prisma {
     OR?: VoucherScalarWhereWithAggregatesInput[]
     NOT?: VoucherScalarWhereWithAggregatesInput | VoucherScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Voucher"> | number
-    natureza?: EnumNaturezaVoucherWithAggregatesFilter<"Voucher"> | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaWithAggregatesFilter<"Voucher"> | $Enums.TipoCorrida
-    status?: EnumStatusVoucherWithAggregatesFilter<"Voucher"> | $Enums.StatusVoucher
     origem?: StringWithAggregatesFilter<"Voucher"> | string
     destino?: StringWithAggregatesFilter<"Voucher"> | string
     dataHoraProgramado?: DateTimeWithAggregatesFilter<"Voucher"> | Date | string
@@ -27866,6 +27977,9 @@ export namespace Prisma {
     carroId?: IntWithAggregatesFilter<"Voucher"> | number
     adminUsuarioId?: BigIntWithAggregatesFilter<"Voucher"> | bigint | number
     operadoraId?: BigIntWithAggregatesFilter<"Voucher"> | bigint | number
+    natureza?: EnumNaturezaVoucherWithAggregatesFilter<"Voucher"> | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaWithAggregatesFilter<"Voucher"> | $Enums.TipoCorrida
+    status?: EnumStatusVoucherWithAggregatesFilter<"Voucher"> | $Enums.StatusVoucher
   }
 
   export type AdminUsuarioCreateInput = {
@@ -28131,10 +28245,10 @@ export namespace Prisma {
     tipoMotorista?: string | null
     dataCriacao?: Date | string | null
     statusCnh?: boolean | null
-    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     carro?: CarroCreateNestedManyWithoutMotoristaInput
     modeloVoucherFixo?: ModeloVoucherFixoCreateNestedManyWithoutMotoristaInput
     voucher?: VoucherCreateNestedManyWithoutMotoristaInput
+    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     agregadoRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoAgregadoInput
     funcionarioRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoFuncionarioInput
   }
@@ -28173,10 +28287,10 @@ export namespace Prisma {
     tipoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
     dataCriacao?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     statusCnh?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     carro?: CarroUpdateManyWithoutMotoristaNestedInput
     modeloVoucherFixo?: ModeloVoucherFixoUpdateManyWithoutMotoristaNestedInput
     voucher?: VoucherUpdateManyWithoutMotoristaNestedInput
+    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     agregadoRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoAgregadoNestedInput
     funcionarioRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoFuncionarioNestedInput
   }
@@ -28724,10 +28838,10 @@ export namespace Prisma {
     nome: string
     email: string
     senha?: string
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: string | null
     statusSolicitante?: boolean
     telefone?: string | null
+    funcao: $Enums.FuncaoSolicitante
     empresaCliente: EmpresaClienteCreateNestedOneWithoutSolicitanteInput
     operadora?: OperadoraCreateNestedOneWithoutSolicitanteInput
   }
@@ -28738,11 +28852,11 @@ export namespace Prisma {
     email: string
     senha?: string
     empresaClienteId: bigint | number
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: string | null
     statusSolicitante?: boolean
     operadoraId?: bigint | number | null
     telefone?: string | null
+    funcao: $Enums.FuncaoSolicitante
   }
 
   export type SolicitanteUpdateInput = {
@@ -28750,10 +28864,10 @@ export namespace Prisma {
     nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutSolicitanteNestedInput
     operadora?: OperadoraUpdateOneWithoutSolicitanteNestedInput
   }
@@ -28764,11 +28878,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
     empresaClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
   }
 
   export type SolicitanteCreateManyInput = {
@@ -28777,11 +28891,11 @@ export namespace Prisma {
     email: string
     senha?: string
     empresaClienteId: bigint | number
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: string | null
     statusSolicitante?: boolean
     operadoraId?: bigint | number | null
     telefone?: string | null
+    funcao: $Enums.FuncaoSolicitante
   }
 
   export type SolicitanteUpdateManyMutationInput = {
@@ -28789,10 +28903,10 @@ export namespace Prisma {
     nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
   }
 
   export type SolicitanteUncheckedUpdateManyInput = {
@@ -28801,11 +28915,11 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
     empresaClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
   }
 
   export type PassageiroCreateInput = {
@@ -28816,6 +28930,12 @@ export namespace Prisma {
     email?: string | null
     ativo?: boolean
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
     empresaCliente: EmpresaClienteCreateNestedOneWithoutPassageirosInput
     centroCustoCliente: CentroCustoClienteCreateNestedOneWithoutPassageirosInput
     viagens?: VoucherPassageiroCreateNestedManyWithoutPassageiroInput
@@ -28831,6 +28951,12 @@ export namespace Prisma {
     empresaClienteId: bigint | number
     centroCustoClienteId: bigint | number
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
     viagens?: VoucherPassageiroUncheckedCreateNestedManyWithoutPassageiroInput
   }
 
@@ -28842,6 +28968,12 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     ativo?: BoolFieldUpdateOperationsInput | boolean
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutPassageirosNestedInput
     centroCustoCliente?: CentroCustoClienteUpdateOneRequiredWithoutPassageirosNestedInput
     viagens?: VoucherPassageiroUpdateManyWithoutPassageiroNestedInput
@@ -28857,6 +28989,12 @@ export namespace Prisma {
     empresaClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     centroCustoClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
     viagens?: VoucherPassageiroUncheckedUpdateManyWithoutPassageiroNestedInput
   }
 
@@ -28870,6 +29008,12 @@ export namespace Prisma {
     empresaClienteId: bigint | number
     centroCustoClienteId: bigint | number
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
   }
 
   export type PassageiroUpdateManyMutationInput = {
@@ -28880,6 +29024,12 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     ativo?: BoolFieldUpdateOperationsInput | boolean
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type PassageiroUncheckedUpdateManyInput = {
@@ -28892,6 +29042,12 @@ export namespace Prisma {
     empresaClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     centroCustoClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type RotaCreateInput = {
@@ -29003,13 +29159,13 @@ export namespace Prisma {
   }
 
   export type RotaValorCreateInput = {
-    categoria: $Enums.CategoriasCarros
     valorViagem: Decimal | DecimalJsLike | number | string
     valorViagemRepasse: Decimal | DecimalJsLike | number | string
     valorHoraParada: Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse: Decimal | DecimalJsLike | number | string
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
+    categoria: $Enums.CategoriasCarros
     rota: RotaCreateNestedOneWithoutRotaValorInput
     empresaCliente?: EmpresaClienteCreateNestedOneWithoutRotaValorInput
     operadora?: OperadoraCreateNestedOneWithoutRotaValorInput
@@ -29019,7 +29175,6 @@ export namespace Prisma {
   export type RotaValorUncheckedCreateInput = {
     id?: number
     rotaId: number
-    categoria: $Enums.CategoriasCarros
     empresaClienteId?: bigint | number | null
     operadoraId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
@@ -29029,16 +29184,17 @@ export namespace Prisma {
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
     valorPedagio?: number | null
+    categoria: $Enums.CategoriasCarros
   }
 
   export type RotaValorUpdateInput = {
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParada?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     rota?: RotaUpdateOneRequiredWithoutRotaValorNestedInput
     empresaCliente?: EmpresaClienteUpdateOneWithoutRotaValorNestedInput
     operadora?: OperadoraUpdateOneWithoutRotaValorNestedInput
@@ -29048,7 +29204,6 @@ export namespace Prisma {
   export type RotaValorUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     rotaId?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     empresaClienteId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -29058,12 +29213,12 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorPedagio?: NullableIntFieldUpdateOperationsInput | number | null
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type RotaValorCreateManyInput = {
     id?: number
     rotaId: number
-    categoria: $Enums.CategoriasCarros
     empresaClienteId?: bigint | number | null
     operadoraId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
@@ -29073,22 +29228,22 @@ export namespace Prisma {
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
     valorPedagio?: number | null
+    categoria: $Enums.CategoriasCarros
   }
 
   export type RotaValorUpdateManyMutationInput = {
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParada?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type RotaValorUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     rotaId?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     empresaClienteId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -29098,6 +29253,7 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorPedagio?: NullableIntFieldUpdateOperationsInput | number | null
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type ModeloVoucherFixoCreateInput = {
@@ -29116,8 +29272,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente: EmpresaClienteCreateNestedOneWithoutModeloVoucherFixoInput
     motorista: MotoristaCreateNestedOneWithoutModeloVoucherFixoInput
     carro: CarroCreateNestedOneWithoutModeloVoucherFixoInput
@@ -29148,8 +29304,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedCreateNestedManyWithoutModeloFixoInput
   }
 
@@ -29169,8 +29325,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     motorista?: MotoristaUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     carro?: CarroUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
@@ -29201,8 +29357,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedUpdateManyWithoutModeloFixoNestedInput
   }
 
@@ -29228,8 +29384,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type ModeloVoucherFixoUpdateManyMutationInput = {
@@ -29248,8 +29404,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type ModeloVoucherFixoUncheckedUpdateManyInput = {
@@ -29274,8 +29430,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type RelacaoAgrdFuncCreateInput = {
@@ -29325,9 +29481,9 @@ export namespace Prisma {
   }
 
   export type VoucherPassageiroCreateInput = {
-    statusPresenca?: $Enums.StatusPresenca
     horarioEmbarqueReal?: Date | string | null
     observacao?: string | null
+    statusPresenca?: $Enums.StatusPresenca
     voucher: VoucherCreateNestedOneWithoutPassageirosInput
     passageiro: PassageiroCreateNestedOneWithoutViagensInput
   }
@@ -29336,15 +29492,15 @@ export namespace Prisma {
     id?: number
     voucherId: number
     passageiroId: bigint | number
-    statusPresenca?: $Enums.StatusPresenca
     horarioEmbarqueReal?: Date | string | null
     observacao?: string | null
+    statusPresenca?: $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroUpdateInput = {
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     voucher?: VoucherUpdateOneRequiredWithoutPassageirosNestedInput
     passageiro?: PassageiroUpdateOneRequiredWithoutViagensNestedInput
   }
@@ -29353,39 +29509,36 @@ export namespace Prisma {
     id?: IntFieldUpdateOperationsInput | number
     voucherId?: IntFieldUpdateOperationsInput | number
     passageiroId?: BigIntFieldUpdateOperationsInput | bigint | number
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroCreateManyInput = {
     id?: number
     voucherId: number
     passageiroId: bigint | number
-    statusPresenca?: $Enums.StatusPresenca
     horarioEmbarqueReal?: Date | string | null
     observacao?: string | null
+    statusPresenca?: $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroUpdateManyMutationInput = {
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     voucherId?: IntFieldUpdateOperationsInput | number
     passageiroId?: BigIntFieldUpdateOperationsInput | bigint | number
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
   }
 
   export type VoucherCreateInput = {
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -29398,6 +29551,9 @@ export namespace Prisma {
     valorTempoParado: Decimal | DecimalJsLike | number | string
     assinatura?: string | null
     observacaoMotorista?: string | null
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoCreateNestedOneWithoutVouchersGeradosInput
     rota?: RotaCreateNestedOneWithoutVouchersInput
     empresaCliente: EmpresaClienteCreateNestedOneWithoutVoucherInput
@@ -29410,9 +29566,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedCreateInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -29432,13 +29585,13 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedCreateNestedManyWithoutVoucherInput
   }
 
   export type VoucherUpdateInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -29451,6 +29604,9 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoUpdateOneWithoutVouchersGeradosNestedInput
     rota?: RotaUpdateOneWithoutVouchersNestedInput
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutVoucherNestedInput
@@ -29463,9 +29619,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -29485,14 +29638,14 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedUpdateManyWithoutVoucherNestedInput
   }
 
   export type VoucherCreateManyInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -29512,12 +29665,12 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
   }
 
   export type VoucherUpdateManyMutationInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -29530,13 +29683,13 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type VoucherUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -29556,6 +29709,9 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type BigIntFilter<$PrismaModel = never> = {
@@ -30383,11 +30539,11 @@ export namespace Prisma {
     email?: SortOrder
     senha?: SortOrder
     empresaClienteId?: SortOrder
-    funcao?: SortOrder
     fotoUrlSolicitante?: SortOrder
     statusSolicitante?: SortOrder
     operadoraId?: SortOrder
     telefone?: SortOrder
+    funcao?: SortOrder
   }
 
   export type SolicitanteAvgOrderByAggregateInput = {
@@ -30402,11 +30558,11 @@ export namespace Prisma {
     email?: SortOrder
     senha?: SortOrder
     empresaClienteId?: SortOrder
-    funcao?: SortOrder
     fotoUrlSolicitante?: SortOrder
     statusSolicitante?: SortOrder
     operadoraId?: SortOrder
     telefone?: SortOrder
+    funcao?: SortOrder
   }
 
   export type SolicitanteMinOrderByAggregateInput = {
@@ -30415,11 +30571,11 @@ export namespace Prisma {
     email?: SortOrder
     senha?: SortOrder
     empresaClienteId?: SortOrder
-    funcao?: SortOrder
     fotoUrlSolicitante?: SortOrder
     statusSolicitante?: SortOrder
     operadoraId?: SortOrder
     telefone?: SortOrder
+    funcao?: SortOrder
   }
 
   export type SolicitanteSumOrderByAggregateInput = {
@@ -30463,6 +30619,12 @@ export namespace Prisma {
     empresaClienteId?: SortOrder
     centroCustoClienteId?: SortOrder
     fotoPerfilPassageiro?: SortOrder
+    endRua?: SortOrder
+    endNumero?: SortOrder
+    endBairro?: SortOrder
+    endCidade?: SortOrder
+    pontoApanha?: SortOrder
+    horarioEmbarque?: SortOrder
   }
 
   export type PassageiroAvgOrderByAggregateInput = {
@@ -30481,6 +30643,12 @@ export namespace Prisma {
     empresaClienteId?: SortOrder
     centroCustoClienteId?: SortOrder
     fotoPerfilPassageiro?: SortOrder
+    endRua?: SortOrder
+    endNumero?: SortOrder
+    endBairro?: SortOrder
+    endCidade?: SortOrder
+    pontoApanha?: SortOrder
+    horarioEmbarque?: SortOrder
   }
 
   export type PassageiroMinOrderByAggregateInput = {
@@ -30493,6 +30661,12 @@ export namespace Prisma {
     empresaClienteId?: SortOrder
     centroCustoClienteId?: SortOrder
     fotoPerfilPassageiro?: SortOrder
+    endRua?: SortOrder
+    endNumero?: SortOrder
+    endBairro?: SortOrder
+    endCidade?: SortOrder
+    pontoApanha?: SortOrder
+    horarioEmbarque?: SortOrder
   }
 
   export type PassageiroSumOrderByAggregateInput = {
@@ -30597,13 +30771,6 @@ export namespace Prisma {
     _max?: NestedDecimalFilter<$PrismaModel>
   }
 
-  export type EnumCategoriasCarrosFilter<$PrismaModel = never> = {
-    equals?: $Enums.CategoriasCarros | EnumCategoriasCarrosFieldRefInput<$PrismaModel>
-    in?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
-    notIn?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
-    not?: NestedEnumCategoriasCarrosFilter<$PrismaModel> | $Enums.CategoriasCarros
-  }
-
   export type IntNullableFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -30613,6 +30780,13 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type EnumCategoriasCarrosFilter<$PrismaModel = never> = {
+    equals?: $Enums.CategoriasCarros | EnumCategoriasCarrosFieldRefInput<$PrismaModel>
+    in?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
+    notIn?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
+    not?: NestedEnumCategoriasCarrosFilter<$PrismaModel> | $Enums.CategoriasCarros
   }
 
   export type RotaScalarRelationFilter = {
@@ -30628,7 +30802,6 @@ export namespace Prisma {
   export type RotaValorCountOrderByAggregateInput = {
     id?: SortOrder
     rotaId?: SortOrder
-    categoria?: SortOrder
     empresaClienteId?: SortOrder
     operadoraId?: SortOrder
     valorViagem?: SortOrder
@@ -30638,6 +30811,7 @@ export namespace Prisma {
     valorDeslocamento?: SortOrder
     valorDeslocamentoRepasse?: SortOrder
     valorPedagio?: SortOrder
+    categoria?: SortOrder
   }
 
   export type RotaValorAvgOrderByAggregateInput = {
@@ -30657,7 +30831,6 @@ export namespace Prisma {
   export type RotaValorMaxOrderByAggregateInput = {
     id?: SortOrder
     rotaId?: SortOrder
-    categoria?: SortOrder
     empresaClienteId?: SortOrder
     operadoraId?: SortOrder
     valorViagem?: SortOrder
@@ -30667,12 +30840,12 @@ export namespace Prisma {
     valorDeslocamento?: SortOrder
     valorDeslocamentoRepasse?: SortOrder
     valorPedagio?: SortOrder
+    categoria?: SortOrder
   }
 
   export type RotaValorMinOrderByAggregateInput = {
     id?: SortOrder
     rotaId?: SortOrder
-    categoria?: SortOrder
     empresaClienteId?: SortOrder
     operadoraId?: SortOrder
     valorViagem?: SortOrder
@@ -30682,6 +30855,7 @@ export namespace Prisma {
     valorDeslocamento?: SortOrder
     valorDeslocamentoRepasse?: SortOrder
     valorPedagio?: SortOrder
+    categoria?: SortOrder
   }
 
   export type RotaValorSumOrderByAggregateInput = {
@@ -30698,16 +30872,6 @@ export namespace Prisma {
     valorPedagio?: SortOrder
   }
 
-  export type EnumCategoriasCarrosWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.CategoriasCarros | EnumCategoriasCarrosFieldRefInput<$PrismaModel>
-    in?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
-    notIn?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
-    not?: NestedEnumCategoriasCarrosWithAggregatesFilter<$PrismaModel> | $Enums.CategoriasCarros
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumCategoriasCarrosFilter<$PrismaModel>
-    _max?: NestedEnumCategoriasCarrosFilter<$PrismaModel>
-  }
-
   export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -30722,6 +30886,16 @@ export namespace Prisma {
     _sum?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedIntNullableFilter<$PrismaModel>
     _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type EnumCategoriasCarrosWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CategoriasCarros | EnumCategoriasCarrosFieldRefInput<$PrismaModel>
+    in?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
+    notIn?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
+    not?: NestedEnumCategoriasCarrosWithAggregatesFilter<$PrismaModel> | $Enums.CategoriasCarros
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCategoriasCarrosFilter<$PrismaModel>
+    _max?: NestedEnumCategoriasCarrosFilter<$PrismaModel>
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -30780,8 +30954,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: SortOrder
     dataInicio?: SortOrder
     dataFim?: SortOrder
-    diasSemana?: SortOrder
     horario?: SortOrder
+    diasSemana?: SortOrder
   }
 
   export type ModeloVoucherFixoAvgOrderByAggregateInput = {
@@ -30943,9 +31117,9 @@ export namespace Prisma {
     id?: SortOrder
     voucherId?: SortOrder
     passageiroId?: SortOrder
-    statusPresenca?: SortOrder
     horarioEmbarqueReal?: SortOrder
     observacao?: SortOrder
+    statusPresenca?: SortOrder
   }
 
   export type VoucherPassageiroAvgOrderByAggregateInput = {
@@ -30958,18 +31132,18 @@ export namespace Prisma {
     id?: SortOrder
     voucherId?: SortOrder
     passageiroId?: SortOrder
-    statusPresenca?: SortOrder
     horarioEmbarqueReal?: SortOrder
     observacao?: SortOrder
+    statusPresenca?: SortOrder
   }
 
   export type VoucherPassageiroMinOrderByAggregateInput = {
     id?: SortOrder
     voucherId?: SortOrder
     passageiroId?: SortOrder
-    statusPresenca?: SortOrder
     horarioEmbarqueReal?: SortOrder
     observacao?: SortOrder
+    statusPresenca?: SortOrder
   }
 
   export type VoucherPassageiroSumOrderByAggregateInput = {
@@ -31021,9 +31195,6 @@ export namespace Prisma {
 
   export type VoucherCountOrderByAggregateInput = {
     id?: SortOrder
-    natureza?: SortOrder
-    tipoCorrida?: SortOrder
-    status?: SortOrder
     origem?: SortOrder
     destino?: SortOrder
     dataHoraProgramado?: SortOrder
@@ -31043,6 +31214,9 @@ export namespace Prisma {
     carroId?: SortOrder
     adminUsuarioId?: SortOrder
     operadoraId?: SortOrder
+    natureza?: SortOrder
+    tipoCorrida?: SortOrder
+    status?: SortOrder
   }
 
   export type VoucherAvgOrderByAggregateInput = {
@@ -31063,9 +31237,6 @@ export namespace Prisma {
 
   export type VoucherMaxOrderByAggregateInput = {
     id?: SortOrder
-    natureza?: SortOrder
-    tipoCorrida?: SortOrder
-    status?: SortOrder
     origem?: SortOrder
     destino?: SortOrder
     dataHoraProgramado?: SortOrder
@@ -31085,13 +31256,13 @@ export namespace Prisma {
     carroId?: SortOrder
     adminUsuarioId?: SortOrder
     operadoraId?: SortOrder
+    natureza?: SortOrder
+    tipoCorrida?: SortOrder
+    status?: SortOrder
   }
 
   export type VoucherMinOrderByAggregateInput = {
     id?: SortOrder
-    natureza?: SortOrder
-    tipoCorrida?: SortOrder
-    status?: SortOrder
     origem?: SortOrder
     destino?: SortOrder
     dataHoraProgramado?: SortOrder
@@ -31111,6 +31282,9 @@ export namespace Prisma {
     carroId?: SortOrder
     adminUsuarioId?: SortOrder
     operadoraId?: SortOrder
+    natureza?: SortOrder
+    tipoCorrida?: SortOrder
+    status?: SortOrder
   }
 
   export type VoucherSumOrderByAggregateInput = {
@@ -31719,12 +31893,6 @@ export namespace Prisma {
     deleteMany?: PassageiroScalarWhereInput | PassageiroScalarWhereInput[]
   }
 
-  export type OperadoraCreateNestedOneWithoutMotoristaInput = {
-    create?: XOR<OperadoraCreateWithoutMotoristaInput, OperadoraUncheckedCreateWithoutMotoristaInput>
-    connectOrCreate?: OperadoraCreateOrConnectWithoutMotoristaInput
-    connect?: OperadoraWhereUniqueInput
-  }
-
   export type CarroCreateNestedManyWithoutMotoristaInput = {
     create?: XOR<CarroCreateWithoutMotoristaInput, CarroUncheckedCreateWithoutMotoristaInput> | CarroCreateWithoutMotoristaInput[] | CarroUncheckedCreateWithoutMotoristaInput[]
     connectOrCreate?: CarroCreateOrConnectWithoutMotoristaInput | CarroCreateOrConnectWithoutMotoristaInput[]
@@ -31744,6 +31912,12 @@ export namespace Prisma {
     connectOrCreate?: VoucherCreateOrConnectWithoutMotoristaInput | VoucherCreateOrConnectWithoutMotoristaInput[]
     createMany?: VoucherCreateManyMotoristaInputEnvelope
     connect?: VoucherWhereUniqueInput | VoucherWhereUniqueInput[]
+  }
+
+  export type OperadoraCreateNestedOneWithoutMotoristaInput = {
+    create?: XOR<OperadoraCreateWithoutMotoristaInput, OperadoraUncheckedCreateWithoutMotoristaInput>
+    connectOrCreate?: OperadoraCreateOrConnectWithoutMotoristaInput
+    connect?: OperadoraWhereUniqueInput
   }
 
   export type RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoAgregadoInput = {
@@ -31795,16 +31969,6 @@ export namespace Prisma {
     connect?: RelacaoAgrdFuncWhereUniqueInput | RelacaoAgrdFuncWhereUniqueInput[]
   }
 
-  export type OperadoraUpdateOneWithoutMotoristaNestedInput = {
-    create?: XOR<OperadoraCreateWithoutMotoristaInput, OperadoraUncheckedCreateWithoutMotoristaInput>
-    connectOrCreate?: OperadoraCreateOrConnectWithoutMotoristaInput
-    upsert?: OperadoraUpsertWithoutMotoristaInput
-    disconnect?: OperadoraWhereInput | boolean
-    delete?: OperadoraWhereInput | boolean
-    connect?: OperadoraWhereUniqueInput
-    update?: XOR<XOR<OperadoraUpdateToOneWithWhereWithoutMotoristaInput, OperadoraUpdateWithoutMotoristaInput>, OperadoraUncheckedUpdateWithoutMotoristaInput>
-  }
-
   export type CarroUpdateManyWithoutMotoristaNestedInput = {
     create?: XOR<CarroCreateWithoutMotoristaInput, CarroUncheckedCreateWithoutMotoristaInput> | CarroCreateWithoutMotoristaInput[] | CarroUncheckedCreateWithoutMotoristaInput[]
     connectOrCreate?: CarroCreateOrConnectWithoutMotoristaInput | CarroCreateOrConnectWithoutMotoristaInput[]
@@ -31845,6 +32009,16 @@ export namespace Prisma {
     update?: VoucherUpdateWithWhereUniqueWithoutMotoristaInput | VoucherUpdateWithWhereUniqueWithoutMotoristaInput[]
     updateMany?: VoucherUpdateManyWithWhereWithoutMotoristaInput | VoucherUpdateManyWithWhereWithoutMotoristaInput[]
     deleteMany?: VoucherScalarWhereInput | VoucherScalarWhereInput[]
+  }
+
+  export type OperadoraUpdateOneWithoutMotoristaNestedInput = {
+    create?: XOR<OperadoraCreateWithoutMotoristaInput, OperadoraUncheckedCreateWithoutMotoristaInput>
+    connectOrCreate?: OperadoraCreateOrConnectWithoutMotoristaInput
+    upsert?: OperadoraUpsertWithoutMotoristaInput
+    disconnect?: OperadoraWhereInput | boolean
+    delete?: OperadoraWhereInput | boolean
+    connect?: OperadoraWhereUniqueInput
+    update?: XOR<XOR<OperadoraUpdateToOneWithWhereWithoutMotoristaInput, OperadoraUpdateWithoutMotoristaInput>, OperadoraUncheckedUpdateWithoutMotoristaInput>
   }
 
   export type RelacaoAgrdFuncUpdateManyWithoutMotoristaComoAgregadoNestedInput = {
@@ -33721,16 +33895,6 @@ export namespace Prisma {
     not?: NestedEnumCategoriasCarrosFilter<$PrismaModel> | $Enums.CategoriasCarros
   }
 
-  export type NestedEnumCategoriasCarrosWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.CategoriasCarros | EnumCategoriasCarrosFieldRefInput<$PrismaModel>
-    in?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
-    notIn?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
-    not?: NestedEnumCategoriasCarrosWithAggregatesFilter<$PrismaModel> | $Enums.CategoriasCarros
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumCategoriasCarrosFilter<$PrismaModel>
-    _max?: NestedEnumCategoriasCarrosFilter<$PrismaModel>
-  }
-
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -33745,6 +33909,16 @@ export namespace Prisma {
     _sum?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedIntNullableFilter<$PrismaModel>
     _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedEnumCategoriasCarrosWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: $Enums.CategoriasCarros | EnumCategoriasCarrosFieldRefInput<$PrismaModel>
+    in?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
+    notIn?: $Enums.CategoriasCarros[] | ListEnumCategoriasCarrosFieldRefInput<$PrismaModel>
+    not?: NestedEnumCategoriasCarrosWithAggregatesFilter<$PrismaModel> | $Enums.CategoriasCarros
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedEnumCategoriasCarrosFilter<$PrismaModel>
+    _max?: NestedEnumCategoriasCarrosFilter<$PrismaModel>
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -33919,8 +34093,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente: EmpresaClienteCreateNestedOneWithoutModeloVoucherFixoInput
     motorista: MotoristaCreateNestedOneWithoutModeloVoucherFixoInput
     carro: CarroCreateNestedOneWithoutModeloVoucherFixoInput
@@ -33949,8 +34123,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedCreateNestedManyWithoutModeloFixoInput
   }
 
@@ -33965,9 +34139,6 @@ export namespace Prisma {
   }
 
   export type VoucherCreateWithoutAdminUsuarioInput = {
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -33980,6 +34151,9 @@ export namespace Prisma {
     valorTempoParado: Decimal | DecimalJsLike | number | string
     assinatura?: string | null
     observacaoMotorista?: string | null
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoCreateNestedOneWithoutVouchersGeradosInput
     rota?: RotaCreateNestedOneWithoutVouchersInput
     empresaCliente: EmpresaClienteCreateNestedOneWithoutVoucherInput
@@ -33991,9 +34165,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedCreateWithoutAdminUsuarioInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -34012,6 +34183,9 @@ export namespace Prisma {
     motoristaId: bigint | number
     carroId: number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedCreateNestedManyWithoutVoucherInput
   }
 
@@ -34135,8 +34309,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFilter<"ModeloVoucherFixo"> | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFilter<"ModeloVoucherFixo"> | Date | string
     dataFim?: DateTimeNullableFilter<"ModeloVoucherFixo"> | Date | string | null
-    diasSemana?: EnumDiaDaSemanaNullableListFilter<"ModeloVoucherFixo">
     horario?: DateTimeFilter<"ModeloVoucherFixo"> | Date | string
+    diasSemana?: EnumDiaDaSemanaNullableListFilter<"ModeloVoucherFixo">
   }
 
   export type VoucherUpsertWithWhereUniqueWithoutAdminUsuarioInput = {
@@ -34160,9 +34334,6 @@ export namespace Prisma {
     OR?: VoucherScalarWhereInput[]
     NOT?: VoucherScalarWhereInput | VoucherScalarWhereInput[]
     id?: IntFilter<"Voucher"> | number
-    natureza?: EnumNaturezaVoucherFilter<"Voucher"> | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFilter<"Voucher"> | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFilter<"Voucher"> | $Enums.StatusVoucher
     origem?: StringFilter<"Voucher"> | string
     destino?: StringFilter<"Voucher"> | string
     dataHoraProgramado?: DateTimeFilter<"Voucher"> | Date | string
@@ -34182,6 +34353,9 @@ export namespace Prisma {
     carroId?: IntFilter<"Voucher"> | number
     adminUsuarioId?: BigIntFilter<"Voucher"> | bigint | number
     operadoraId?: BigIntFilter<"Voucher"> | bigint | number
+    natureza?: EnumNaturezaVoucherFilter<"Voucher"> | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFilter<"Voucher"> | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFilter<"Voucher"> | $Enums.StatusVoucher
   }
 
   export type EmpresaClienteCreateWithoutCentroCustoClienteInput = {
@@ -34294,6 +34468,12 @@ export namespace Prisma {
     email?: string | null
     ativo?: boolean
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
     empresaCliente: EmpresaClienteCreateNestedOneWithoutPassageirosInput
     viagens?: VoucherPassageiroCreateNestedManyWithoutPassageiroInput
   }
@@ -34307,6 +34487,12 @@ export namespace Prisma {
     ativo?: boolean
     empresaClienteId: bigint | number
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
     viagens?: VoucherPassageiroUncheckedCreateNestedManyWithoutPassageiroInput
   }
 
@@ -34463,6 +34649,12 @@ export namespace Prisma {
     empresaClienteId?: BigIntFilter<"Passageiro"> | bigint | number
     centroCustoClienteId?: BigIntFilter<"Passageiro"> | bigint | number
     fotoPerfilPassageiro?: StringNullableFilter<"Passageiro"> | string | null
+    endRua?: StringNullableFilter<"Passageiro"> | string | null
+    endNumero?: StringNullableFilter<"Passageiro"> | string | null
+    endBairro?: StringNullableFilter<"Passageiro"> | string | null
+    endCidade?: StringNullableFilter<"Passageiro"> | string | null
+    pontoApanha?: StringNullableFilter<"Passageiro"> | string | null
+    horarioEmbarque?: StringNullableFilter<"Passageiro"> | string | null
   }
 
   export type CentroCustoClienteCreateWithoutEmpresaClienteInput = {
@@ -34559,10 +34751,10 @@ export namespace Prisma {
     nome: string
     email: string
     senha?: string
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: string | null
     statusSolicitante?: boolean
     telefone?: string | null
+    funcao: $Enums.FuncaoSolicitante
     operadora?: OperadoraCreateNestedOneWithoutSolicitanteInput
   }
 
@@ -34571,11 +34763,11 @@ export namespace Prisma {
     nome: string
     email: string
     senha?: string
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: string | null
     statusSolicitante?: boolean
     operadoraId?: bigint | number | null
     telefone?: string | null
+    funcao: $Enums.FuncaoSolicitante
   }
 
   export type SolicitanteCreateOrConnectWithoutEmpresaClienteInput = {
@@ -34646,8 +34838,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     motorista: MotoristaCreateNestedOneWithoutModeloVoucherFixoInput
     carro: CarroCreateNestedOneWithoutModeloVoucherFixoInput
     adminUsuario: AdminUsuarioCreateNestedOneWithoutModeloVoucherFixoInput
@@ -34676,8 +34868,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedCreateNestedManyWithoutModeloFixoInput
   }
 
@@ -34692,9 +34884,6 @@ export namespace Prisma {
   }
 
   export type VoucherCreateWithoutEmpresaClienteInput = {
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -34707,6 +34896,9 @@ export namespace Prisma {
     valorTempoParado: Decimal | DecimalJsLike | number | string
     assinatura?: string | null
     observacaoMotorista?: string | null
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoCreateNestedOneWithoutVouchersGeradosInput
     rota?: RotaCreateNestedOneWithoutVouchersInput
     motorista: MotoristaCreateNestedOneWithoutVoucherInput
@@ -34718,9 +34910,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedCreateWithoutEmpresaClienteInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -34739,6 +34928,9 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedCreateNestedManyWithoutVoucherInput
   }
 
@@ -34753,13 +34945,13 @@ export namespace Prisma {
   }
 
   export type RotaValorCreateWithoutEmpresaClienteInput = {
-    categoria: $Enums.CategoriasCarros
     valorViagem: Decimal | DecimalJsLike | number | string
     valorViagemRepasse: Decimal | DecimalJsLike | number | string
     valorHoraParada: Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse: Decimal | DecimalJsLike | number | string
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
+    categoria: $Enums.CategoriasCarros
     rota: RotaCreateNestedOneWithoutRotaValorInput
     operadora?: OperadoraCreateNestedOneWithoutRotaValorInput
     pedagio?: PedagioCreateNestedOneWithoutRotaValorInput
@@ -34768,7 +34960,6 @@ export namespace Prisma {
   export type RotaValorUncheckedCreateWithoutEmpresaClienteInput = {
     id?: number
     rotaId: number
-    categoria: $Enums.CategoriasCarros
     operadoraId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
     valorViagemRepasse: Decimal | DecimalJsLike | number | string
@@ -34777,6 +34968,7 @@ export namespace Prisma {
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
     valorPedagio?: number | null
+    categoria: $Enums.CategoriasCarros
   }
 
   export type RotaValorCreateOrConnectWithoutEmpresaClienteInput = {
@@ -34824,6 +35016,12 @@ export namespace Prisma {
     email?: string | null
     ativo?: boolean
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
     centroCustoCliente: CentroCustoClienteCreateNestedOneWithoutPassageirosInput
     viagens?: VoucherPassageiroCreateNestedManyWithoutPassageiroInput
   }
@@ -34837,6 +35035,12 @@ export namespace Prisma {
     ativo?: boolean
     centroCustoClienteId: bigint | number
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
     viagens?: VoucherPassageiroUncheckedCreateNestedManyWithoutPassageiroInput
   }
 
@@ -34971,11 +35175,11 @@ export namespace Prisma {
     email?: StringFilter<"Solicitante"> | string
     senha?: StringFilter<"Solicitante"> | string
     empresaClienteId?: BigIntFilter<"Solicitante"> | bigint | number
-    funcao?: EnumFuncaoSolicitanteFilter<"Solicitante"> | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: StringNullableFilter<"Solicitante"> | string | null
     statusSolicitante?: BoolFilter<"Solicitante"> | boolean
     operadoraId?: BigIntNullableFilter<"Solicitante"> | bigint | number | null
     telefone?: StringNullableFilter<"Solicitante"> | string | null
+    funcao?: EnumFuncaoSolicitanteFilter<"Solicitante"> | $Enums.FuncaoSolicitante
   }
 
   export type UnidadeEmpresaClienteUpsertWithWhereUniqueWithoutEmpresaClienteInput = {
@@ -35068,7 +35272,6 @@ export namespace Prisma {
     NOT?: RotaValorScalarWhereInput | RotaValorScalarWhereInput[]
     id?: IntFilter<"RotaValor"> | number
     rotaId?: IntFilter<"RotaValor"> | number
-    categoria?: EnumCategoriasCarrosFilter<"RotaValor"> | $Enums.CategoriasCarros
     empresaClienteId?: BigIntNullableFilter<"RotaValor"> | bigint | number | null
     operadoraId?: BigIntNullableFilter<"RotaValor"> | bigint | number | null
     valorViagem?: DecimalFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
@@ -35078,6 +35281,7 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFilter<"RotaValor"> | Decimal | DecimalJsLike | number | string
     valorPedagio?: IntNullableFilter<"RotaValor"> | number | null
+    categoria?: EnumCategoriasCarrosFilter<"RotaValor"> | $Enums.CategoriasCarros
   }
 
   export type RotaUpsertWithWhereUniqueWithoutEmpresaClienteInput = {
@@ -35121,6 +35325,169 @@ export namespace Prisma {
   export type PassageiroUpdateManyWithWhereWithoutEmpresaClienteInput = {
     where: PassageiroScalarWhereInput
     data: XOR<PassageiroUpdateManyMutationInput, PassageiroUncheckedUpdateManyWithoutEmpresaClienteInput>
+  }
+
+  export type CarroCreateWithoutMotoristaInput = {
+    placa: string
+    marca: string
+    modelo: string
+    cor: string
+    crlv: string
+    vCrlv?: boolean | null
+    chassi: string
+    ano: string
+    agregadoId?: bigint | number | null
+    operadora?: OperadoraCreateNestedOneWithoutCarroInput
+    vouchers?: VoucherCreateNestedManyWithoutCarroInput
+    modeloVoucherFixo?: ModeloVoucherFixoCreateNestedManyWithoutCarroInput
+  }
+
+  export type CarroUncheckedCreateWithoutMotoristaInput = {
+    id?: number
+    placa: string
+    marca: string
+    modelo: string
+    cor: string
+    crlv: string
+    vCrlv?: boolean | null
+    chassi: string
+    ano: string
+    agregadoId?: bigint | number | null
+    operadoraId?: bigint | number | null
+    vouchers?: VoucherUncheckedCreateNestedManyWithoutCarroInput
+    modeloVoucherFixo?: ModeloVoucherFixoUncheckedCreateNestedManyWithoutCarroInput
+  }
+
+  export type CarroCreateOrConnectWithoutMotoristaInput = {
+    where: CarroWhereUniqueInput
+    create: XOR<CarroCreateWithoutMotoristaInput, CarroUncheckedCreateWithoutMotoristaInput>
+  }
+
+  export type CarroCreateManyMotoristaInputEnvelope = {
+    data: CarroCreateManyMotoristaInput | CarroCreateManyMotoristaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ModeloVoucherFixoCreateWithoutMotoristaInput = {
+    nomeModelo: string
+    ativo?: boolean
+    tipoCorrida: string
+    origem: string
+    destino: string
+    valorViagem: Decimal | DecimalJsLike | number | string
+    valorViagemRepasse: Decimal | DecimalJsLike | number | string
+    valorPedagio: Decimal | DecimalJsLike | number | string
+    valorPedagioRepasse: Decimal | DecimalJsLike | number | string
+    valorEstacionamento: Decimal | DecimalJsLike | number | string
+    valorEstacionamentoRepasse: Decimal | DecimalJsLike | number | string
+    valorTempoParado: Decimal | DecimalJsLike | number | string
+    valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
+    dataInicio: Date | string
+    dataFim?: Date | string | null
+    horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
+    empresaCliente: EmpresaClienteCreateNestedOneWithoutModeloVoucherFixoInput
+    carro: CarroCreateNestedOneWithoutModeloVoucherFixoInput
+    adminUsuario: AdminUsuarioCreateNestedOneWithoutModeloVoucherFixoInput
+    operadora: OperadoraCreateNestedOneWithoutModeloVoucherFixoInput
+    vouchersGerados?: VoucherCreateNestedManyWithoutModeloFixoInput
+  }
+
+  export type ModeloVoucherFixoUncheckedCreateWithoutMotoristaInput = {
+    id?: number
+    nomeModelo: string
+    ativo?: boolean
+    empresaClienteId: bigint | number
+    carroId: number
+    adminUsuarioId: bigint | number
+    operadoraId: bigint | number
+    tipoCorrida: string
+    origem: string
+    destino: string
+    valorViagem: Decimal | DecimalJsLike | number | string
+    valorViagemRepasse: Decimal | DecimalJsLike | number | string
+    valorPedagio: Decimal | DecimalJsLike | number | string
+    valorPedagioRepasse: Decimal | DecimalJsLike | number | string
+    valorEstacionamento: Decimal | DecimalJsLike | number | string
+    valorEstacionamentoRepasse: Decimal | DecimalJsLike | number | string
+    valorTempoParado: Decimal | DecimalJsLike | number | string
+    valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
+    dataInicio: Date | string
+    dataFim?: Date | string | null
+    horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
+    vouchersGerados?: VoucherUncheckedCreateNestedManyWithoutModeloFixoInput
+  }
+
+  export type ModeloVoucherFixoCreateOrConnectWithoutMotoristaInput = {
+    where: ModeloVoucherFixoWhereUniqueInput
+    create: XOR<ModeloVoucherFixoCreateWithoutMotoristaInput, ModeloVoucherFixoUncheckedCreateWithoutMotoristaInput>
+  }
+
+  export type ModeloVoucherFixoCreateManyMotoristaInputEnvelope = {
+    data: ModeloVoucherFixoCreateManyMotoristaInput | ModeloVoucherFixoCreateManyMotoristaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type VoucherCreateWithoutMotoristaInput = {
+    origem: string
+    destino: string
+    dataHoraProgramado: Date | string
+    dataHoraConclusao?: Date | string | null
+    dataHoraCriacao?: Date | string
+    valorViagem: Decimal | DecimalJsLike | number | string
+    valorRepasseMotorista: Decimal | DecimalJsLike | number | string
+    valorPedagio: Decimal | DecimalJsLike | number | string
+    valorEstacionamento: Decimal | DecimalJsLike | number | string
+    valorTempoParado: Decimal | DecimalJsLike | number | string
+    assinatura?: string | null
+    observacaoMotorista?: string | null
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
+    modeloFixo?: ModeloVoucherFixoCreateNestedOneWithoutVouchersGeradosInput
+    rota?: RotaCreateNestedOneWithoutVouchersInput
+    empresaCliente: EmpresaClienteCreateNestedOneWithoutVoucherInput
+    carro: CarroCreateNestedOneWithoutVouchersInput
+    adminUsuario: AdminUsuarioCreateNestedOneWithoutVoucherInput
+    operadora: OperadoraCreateNestedOneWithoutVoucherInput
+    passageiros?: VoucherPassageiroCreateNestedManyWithoutVoucherInput
+  }
+
+  export type VoucherUncheckedCreateWithoutMotoristaInput = {
+    id?: number
+    origem: string
+    destino: string
+    dataHoraProgramado: Date | string
+    dataHoraConclusao?: Date | string | null
+    dataHoraCriacao?: Date | string
+    valorViagem: Decimal | DecimalJsLike | number | string
+    valorRepasseMotorista: Decimal | DecimalJsLike | number | string
+    valorPedagio: Decimal | DecimalJsLike | number | string
+    valorEstacionamento: Decimal | DecimalJsLike | number | string
+    valorTempoParado: Decimal | DecimalJsLike | number | string
+    assinatura?: string | null
+    observacaoMotorista?: string | null
+    modeloFixoId?: number | null
+    rotaId?: number | null
+    empresaClienteId: bigint | number
+    carroId: number
+    adminUsuarioId: bigint | number
+    operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
+    passageiros?: VoucherPassageiroUncheckedCreateNestedManyWithoutVoucherInput
+  }
+
+  export type VoucherCreateOrConnectWithoutMotoristaInput = {
+    where: VoucherWhereUniqueInput
+    create: XOR<VoucherCreateWithoutMotoristaInput, VoucherUncheckedCreateWithoutMotoristaInput>
+  }
+
+  export type VoucherCreateManyMotoristaInputEnvelope = {
+    data: VoucherCreateManyMotoristaInput | VoucherCreateManyMotoristaInput[]
+    skipDuplicates?: boolean
   }
 
   export type OperadoraCreateWithoutMotoristaInput = {
@@ -35186,169 +35553,6 @@ export namespace Prisma {
     create: XOR<OperadoraCreateWithoutMotoristaInput, OperadoraUncheckedCreateWithoutMotoristaInput>
   }
 
-  export type CarroCreateWithoutMotoristaInput = {
-    placa: string
-    marca: string
-    modelo: string
-    cor: string
-    crlv: string
-    vCrlv?: boolean | null
-    chassi: string
-    ano: string
-    agregadoId?: bigint | number | null
-    operadora?: OperadoraCreateNestedOneWithoutCarroInput
-    vouchers?: VoucherCreateNestedManyWithoutCarroInput
-    modeloVoucherFixo?: ModeloVoucherFixoCreateNestedManyWithoutCarroInput
-  }
-
-  export type CarroUncheckedCreateWithoutMotoristaInput = {
-    id?: number
-    placa: string
-    marca: string
-    modelo: string
-    cor: string
-    crlv: string
-    vCrlv?: boolean | null
-    chassi: string
-    ano: string
-    agregadoId?: bigint | number | null
-    operadoraId?: bigint | number | null
-    vouchers?: VoucherUncheckedCreateNestedManyWithoutCarroInput
-    modeloVoucherFixo?: ModeloVoucherFixoUncheckedCreateNestedManyWithoutCarroInput
-  }
-
-  export type CarroCreateOrConnectWithoutMotoristaInput = {
-    where: CarroWhereUniqueInput
-    create: XOR<CarroCreateWithoutMotoristaInput, CarroUncheckedCreateWithoutMotoristaInput>
-  }
-
-  export type CarroCreateManyMotoristaInputEnvelope = {
-    data: CarroCreateManyMotoristaInput | CarroCreateManyMotoristaInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type ModeloVoucherFixoCreateWithoutMotoristaInput = {
-    nomeModelo: string
-    ativo?: boolean
-    tipoCorrida: string
-    origem: string
-    destino: string
-    valorViagem: Decimal | DecimalJsLike | number | string
-    valorViagemRepasse: Decimal | DecimalJsLike | number | string
-    valorPedagio: Decimal | DecimalJsLike | number | string
-    valorPedagioRepasse: Decimal | DecimalJsLike | number | string
-    valorEstacionamento: Decimal | DecimalJsLike | number | string
-    valorEstacionamentoRepasse: Decimal | DecimalJsLike | number | string
-    valorTempoParado: Decimal | DecimalJsLike | number | string
-    valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
-    dataInicio: Date | string
-    dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
-    horario: Date | string
-    empresaCliente: EmpresaClienteCreateNestedOneWithoutModeloVoucherFixoInput
-    carro: CarroCreateNestedOneWithoutModeloVoucherFixoInput
-    adminUsuario: AdminUsuarioCreateNestedOneWithoutModeloVoucherFixoInput
-    operadora: OperadoraCreateNestedOneWithoutModeloVoucherFixoInput
-    vouchersGerados?: VoucherCreateNestedManyWithoutModeloFixoInput
-  }
-
-  export type ModeloVoucherFixoUncheckedCreateWithoutMotoristaInput = {
-    id?: number
-    nomeModelo: string
-    ativo?: boolean
-    empresaClienteId: bigint | number
-    carroId: number
-    adminUsuarioId: bigint | number
-    operadoraId: bigint | number
-    tipoCorrida: string
-    origem: string
-    destino: string
-    valorViagem: Decimal | DecimalJsLike | number | string
-    valorViagemRepasse: Decimal | DecimalJsLike | number | string
-    valorPedagio: Decimal | DecimalJsLike | number | string
-    valorPedagioRepasse: Decimal | DecimalJsLike | number | string
-    valorEstacionamento: Decimal | DecimalJsLike | number | string
-    valorEstacionamentoRepasse: Decimal | DecimalJsLike | number | string
-    valorTempoParado: Decimal | DecimalJsLike | number | string
-    valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
-    dataInicio: Date | string
-    dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
-    horario: Date | string
-    vouchersGerados?: VoucherUncheckedCreateNestedManyWithoutModeloFixoInput
-  }
-
-  export type ModeloVoucherFixoCreateOrConnectWithoutMotoristaInput = {
-    where: ModeloVoucherFixoWhereUniqueInput
-    create: XOR<ModeloVoucherFixoCreateWithoutMotoristaInput, ModeloVoucherFixoUncheckedCreateWithoutMotoristaInput>
-  }
-
-  export type ModeloVoucherFixoCreateManyMotoristaInputEnvelope = {
-    data: ModeloVoucherFixoCreateManyMotoristaInput | ModeloVoucherFixoCreateManyMotoristaInput[]
-    skipDuplicates?: boolean
-  }
-
-  export type VoucherCreateWithoutMotoristaInput = {
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
-    origem: string
-    destino: string
-    dataHoraProgramado: Date | string
-    dataHoraConclusao?: Date | string | null
-    dataHoraCriacao?: Date | string
-    valorViagem: Decimal | DecimalJsLike | number | string
-    valorRepasseMotorista: Decimal | DecimalJsLike | number | string
-    valorPedagio: Decimal | DecimalJsLike | number | string
-    valorEstacionamento: Decimal | DecimalJsLike | number | string
-    valorTempoParado: Decimal | DecimalJsLike | number | string
-    assinatura?: string | null
-    observacaoMotorista?: string | null
-    modeloFixo?: ModeloVoucherFixoCreateNestedOneWithoutVouchersGeradosInput
-    rota?: RotaCreateNestedOneWithoutVouchersInput
-    empresaCliente: EmpresaClienteCreateNestedOneWithoutVoucherInput
-    carro: CarroCreateNestedOneWithoutVouchersInput
-    adminUsuario: AdminUsuarioCreateNestedOneWithoutVoucherInput
-    operadora: OperadoraCreateNestedOneWithoutVoucherInput
-    passageiros?: VoucherPassageiroCreateNestedManyWithoutVoucherInput
-  }
-
-  export type VoucherUncheckedCreateWithoutMotoristaInput = {
-    id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
-    origem: string
-    destino: string
-    dataHoraProgramado: Date | string
-    dataHoraConclusao?: Date | string | null
-    dataHoraCriacao?: Date | string
-    valorViagem: Decimal | DecimalJsLike | number | string
-    valorRepasseMotorista: Decimal | DecimalJsLike | number | string
-    valorPedagio: Decimal | DecimalJsLike | number | string
-    valorEstacionamento: Decimal | DecimalJsLike | number | string
-    valorTempoParado: Decimal | DecimalJsLike | number | string
-    assinatura?: string | null
-    observacaoMotorista?: string | null
-    modeloFixoId?: number | null
-    rotaId?: number | null
-    empresaClienteId: bigint | number
-    carroId: number
-    adminUsuarioId: bigint | number
-    operadoraId: bigint | number
-    passageiros?: VoucherPassageiroUncheckedCreateNestedManyWithoutVoucherInput
-  }
-
-  export type VoucherCreateOrConnectWithoutMotoristaInput = {
-    where: VoucherWhereUniqueInput
-    create: XOR<VoucherCreateWithoutMotoristaInput, VoucherUncheckedCreateWithoutMotoristaInput>
-  }
-
-  export type VoucherCreateManyMotoristaInputEnvelope = {
-    data: VoucherCreateManyMotoristaInput | VoucherCreateManyMotoristaInput[]
-    skipDuplicates?: boolean
-  }
-
   export type RelacaoAgrdFuncCreateWithoutMotoristaComoAgregadoInput = {
     id?: bigint | number
     motoristaComoFuncionario?: MotoristaCreateNestedOneWithoutFuncionarioRelacaoInput
@@ -35391,6 +35595,72 @@ export namespace Prisma {
   export type RelacaoAgrdFuncCreateManyMotoristaComoFuncionarioInputEnvelope = {
     data: RelacaoAgrdFuncCreateManyMotoristaComoFuncionarioInput | RelacaoAgrdFuncCreateManyMotoristaComoFuncionarioInput[]
     skipDuplicates?: boolean
+  }
+
+  export type CarroUpsertWithWhereUniqueWithoutMotoristaInput = {
+    where: CarroWhereUniqueInput
+    update: XOR<CarroUpdateWithoutMotoristaInput, CarroUncheckedUpdateWithoutMotoristaInput>
+    create: XOR<CarroCreateWithoutMotoristaInput, CarroUncheckedCreateWithoutMotoristaInput>
+  }
+
+  export type CarroUpdateWithWhereUniqueWithoutMotoristaInput = {
+    where: CarroWhereUniqueInput
+    data: XOR<CarroUpdateWithoutMotoristaInput, CarroUncheckedUpdateWithoutMotoristaInput>
+  }
+
+  export type CarroUpdateManyWithWhereWithoutMotoristaInput = {
+    where: CarroScalarWhereInput
+    data: XOR<CarroUpdateManyMutationInput, CarroUncheckedUpdateManyWithoutMotoristaInput>
+  }
+
+  export type CarroScalarWhereInput = {
+    AND?: CarroScalarWhereInput | CarroScalarWhereInput[]
+    OR?: CarroScalarWhereInput[]
+    NOT?: CarroScalarWhereInput | CarroScalarWhereInput[]
+    id?: IntFilter<"Carro"> | number
+    placa?: StringFilter<"Carro"> | string
+    marca?: StringFilter<"Carro"> | string
+    modelo?: StringFilter<"Carro"> | string
+    cor?: StringFilter<"Carro"> | string
+    crlv?: StringFilter<"Carro"> | string
+    vCrlv?: BoolNullableFilter<"Carro"> | boolean | null
+    chassi?: StringFilter<"Carro"> | string
+    ano?: StringFilter<"Carro"> | string
+    agregadoId?: BigIntNullableFilter<"Carro"> | bigint | number | null
+    motoristaId?: BigIntNullableFilter<"Carro"> | bigint | number | null
+    operadoraId?: BigIntNullableFilter<"Carro"> | bigint | number | null
+  }
+
+  export type ModeloVoucherFixoUpsertWithWhereUniqueWithoutMotoristaInput = {
+    where: ModeloVoucherFixoWhereUniqueInput
+    update: XOR<ModeloVoucherFixoUpdateWithoutMotoristaInput, ModeloVoucherFixoUncheckedUpdateWithoutMotoristaInput>
+    create: XOR<ModeloVoucherFixoCreateWithoutMotoristaInput, ModeloVoucherFixoUncheckedCreateWithoutMotoristaInput>
+  }
+
+  export type ModeloVoucherFixoUpdateWithWhereUniqueWithoutMotoristaInput = {
+    where: ModeloVoucherFixoWhereUniqueInput
+    data: XOR<ModeloVoucherFixoUpdateWithoutMotoristaInput, ModeloVoucherFixoUncheckedUpdateWithoutMotoristaInput>
+  }
+
+  export type ModeloVoucherFixoUpdateManyWithWhereWithoutMotoristaInput = {
+    where: ModeloVoucherFixoScalarWhereInput
+    data: XOR<ModeloVoucherFixoUpdateManyMutationInput, ModeloVoucherFixoUncheckedUpdateManyWithoutMotoristaInput>
+  }
+
+  export type VoucherUpsertWithWhereUniqueWithoutMotoristaInput = {
+    where: VoucherWhereUniqueInput
+    update: XOR<VoucherUpdateWithoutMotoristaInput, VoucherUncheckedUpdateWithoutMotoristaInput>
+    create: XOR<VoucherCreateWithoutMotoristaInput, VoucherUncheckedCreateWithoutMotoristaInput>
+  }
+
+  export type VoucherUpdateWithWhereUniqueWithoutMotoristaInput = {
+    where: VoucherWhereUniqueInput
+    data: XOR<VoucherUpdateWithoutMotoristaInput, VoucherUncheckedUpdateWithoutMotoristaInput>
+  }
+
+  export type VoucherUpdateManyWithWhereWithoutMotoristaInput = {
+    where: VoucherScalarWhereInput
+    data: XOR<VoucherUpdateManyMutationInput, VoucherUncheckedUpdateManyWithoutMotoristaInput>
   }
 
   export type OperadoraUpsertWithoutMotoristaInput = {
@@ -35460,72 +35730,6 @@ export namespace Prisma {
     carro?: CarroUncheckedUpdateManyWithoutOperadoraNestedInput
     relacaoAgrdFunc?: RelacaoAgrdFuncUncheckedUpdateManyWithoutOperadoraNestedInput
     pedagio?: PedagioUncheckedUpdateManyWithoutOperadoraNestedInput
-  }
-
-  export type CarroUpsertWithWhereUniqueWithoutMotoristaInput = {
-    where: CarroWhereUniqueInput
-    update: XOR<CarroUpdateWithoutMotoristaInput, CarroUncheckedUpdateWithoutMotoristaInput>
-    create: XOR<CarroCreateWithoutMotoristaInput, CarroUncheckedCreateWithoutMotoristaInput>
-  }
-
-  export type CarroUpdateWithWhereUniqueWithoutMotoristaInput = {
-    where: CarroWhereUniqueInput
-    data: XOR<CarroUpdateWithoutMotoristaInput, CarroUncheckedUpdateWithoutMotoristaInput>
-  }
-
-  export type CarroUpdateManyWithWhereWithoutMotoristaInput = {
-    where: CarroScalarWhereInput
-    data: XOR<CarroUpdateManyMutationInput, CarroUncheckedUpdateManyWithoutMotoristaInput>
-  }
-
-  export type CarroScalarWhereInput = {
-    AND?: CarroScalarWhereInput | CarroScalarWhereInput[]
-    OR?: CarroScalarWhereInput[]
-    NOT?: CarroScalarWhereInput | CarroScalarWhereInput[]
-    id?: IntFilter<"Carro"> | number
-    placa?: StringFilter<"Carro"> | string
-    marca?: StringFilter<"Carro"> | string
-    modelo?: StringFilter<"Carro"> | string
-    cor?: StringFilter<"Carro"> | string
-    crlv?: StringFilter<"Carro"> | string
-    vCrlv?: BoolNullableFilter<"Carro"> | boolean | null
-    chassi?: StringFilter<"Carro"> | string
-    ano?: StringFilter<"Carro"> | string
-    agregadoId?: BigIntNullableFilter<"Carro"> | bigint | number | null
-    motoristaId?: BigIntNullableFilter<"Carro"> | bigint | number | null
-    operadoraId?: BigIntNullableFilter<"Carro"> | bigint | number | null
-  }
-
-  export type ModeloVoucherFixoUpsertWithWhereUniqueWithoutMotoristaInput = {
-    where: ModeloVoucherFixoWhereUniqueInput
-    update: XOR<ModeloVoucherFixoUpdateWithoutMotoristaInput, ModeloVoucherFixoUncheckedUpdateWithoutMotoristaInput>
-    create: XOR<ModeloVoucherFixoCreateWithoutMotoristaInput, ModeloVoucherFixoUncheckedCreateWithoutMotoristaInput>
-  }
-
-  export type ModeloVoucherFixoUpdateWithWhereUniqueWithoutMotoristaInput = {
-    where: ModeloVoucherFixoWhereUniqueInput
-    data: XOR<ModeloVoucherFixoUpdateWithoutMotoristaInput, ModeloVoucherFixoUncheckedUpdateWithoutMotoristaInput>
-  }
-
-  export type ModeloVoucherFixoUpdateManyWithWhereWithoutMotoristaInput = {
-    where: ModeloVoucherFixoScalarWhereInput
-    data: XOR<ModeloVoucherFixoUpdateManyMutationInput, ModeloVoucherFixoUncheckedUpdateManyWithoutMotoristaInput>
-  }
-
-  export type VoucherUpsertWithWhereUniqueWithoutMotoristaInput = {
-    where: VoucherWhereUniqueInput
-    update: XOR<VoucherUpdateWithoutMotoristaInput, VoucherUncheckedUpdateWithoutMotoristaInput>
-    create: XOR<VoucherCreateWithoutMotoristaInput, VoucherUncheckedCreateWithoutMotoristaInput>
-  }
-
-  export type VoucherUpdateWithWhereUniqueWithoutMotoristaInput = {
-    where: VoucherWhereUniqueInput
-    data: XOR<VoucherUpdateWithoutMotoristaInput, VoucherUncheckedUpdateWithoutMotoristaInput>
-  }
-
-  export type VoucherUpdateManyWithWhereWithoutMotoristaInput = {
-    where: VoucherScalarWhereInput
-    data: XOR<VoucherUpdateManyMutationInput, VoucherUncheckedUpdateManyWithoutMotoristaInput>
   }
 
   export type RelacaoAgrdFuncUpsertWithWhereUniqueWithoutMotoristaComoAgregadoInput = {
@@ -35646,9 +35850,9 @@ export namespace Prisma {
     tipoMotorista?: string | null
     dataCriacao?: Date | string | null
     statusCnh?: boolean | null
-    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     modeloVoucherFixo?: ModeloVoucherFixoCreateNestedManyWithoutMotoristaInput
     voucher?: VoucherCreateNestedManyWithoutMotoristaInput
+    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     agregadoRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoAgregadoInput
     funcionarioRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoFuncionarioInput
   }
@@ -35679,9 +35883,6 @@ export namespace Prisma {
   }
 
   export type VoucherCreateWithoutCarroInput = {
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -35694,6 +35895,9 @@ export namespace Prisma {
     valorTempoParado: Decimal | DecimalJsLike | number | string
     assinatura?: string | null
     observacaoMotorista?: string | null
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoCreateNestedOneWithoutVouchersGeradosInput
     rota?: RotaCreateNestedOneWithoutVouchersInput
     empresaCliente: EmpresaClienteCreateNestedOneWithoutVoucherInput
@@ -35705,9 +35909,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedCreateWithoutCarroInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -35726,6 +35927,9 @@ export namespace Prisma {
     motoristaId: bigint | number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedCreateNestedManyWithoutVoucherInput
   }
 
@@ -35755,8 +35959,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente: EmpresaClienteCreateNestedOneWithoutModeloVoucherFixoInput
     motorista: MotoristaCreateNestedOneWithoutModeloVoucherFixoInput
     adminUsuario: AdminUsuarioCreateNestedOneWithoutModeloVoucherFixoInput
@@ -35785,8 +35989,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedCreateNestedManyWithoutModeloFixoInput
   }
 
@@ -35893,9 +36097,9 @@ export namespace Prisma {
     tipoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
     dataCriacao?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     statusCnh?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     modeloVoucherFixo?: ModeloVoucherFixoUpdateManyWithoutMotoristaNestedInput
     voucher?: VoucherUpdateManyWithoutMotoristaNestedInput
+    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     agregadoRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoAgregadoNestedInput
     funcionarioRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoFuncionarioNestedInput
   }
@@ -36191,10 +36395,10 @@ export namespace Prisma {
     nome: string
     email: string
     senha?: string
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: string | null
     statusSolicitante?: boolean
     telefone?: string | null
+    funcao: $Enums.FuncaoSolicitante
     empresaCliente: EmpresaClienteCreateNestedOneWithoutSolicitanteInput
   }
 
@@ -36204,10 +36408,10 @@ export namespace Prisma {
     email: string
     senha?: string
     empresaClienteId: bigint | number
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: string | null
     statusSolicitante?: boolean
     telefone?: string | null
+    funcao: $Enums.FuncaoSolicitante
   }
 
   export type SolicitanteCreateOrConnectWithoutOperadoraInput = {
@@ -36290,13 +36494,13 @@ export namespace Prisma {
   }
 
   export type RotaValorCreateWithoutOperadoraInput = {
-    categoria: $Enums.CategoriasCarros
     valorViagem: Decimal | DecimalJsLike | number | string
     valorViagemRepasse: Decimal | DecimalJsLike | number | string
     valorHoraParada: Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse: Decimal | DecimalJsLike | number | string
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
+    categoria: $Enums.CategoriasCarros
     rota: RotaCreateNestedOneWithoutRotaValorInput
     empresaCliente?: EmpresaClienteCreateNestedOneWithoutRotaValorInput
     pedagio?: PedagioCreateNestedOneWithoutRotaValorInput
@@ -36305,7 +36509,6 @@ export namespace Prisma {
   export type RotaValorUncheckedCreateWithoutOperadoraInput = {
     id?: number
     rotaId: number
-    categoria: $Enums.CategoriasCarros
     empresaClienteId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
     valorViagemRepasse: Decimal | DecimalJsLike | number | string
@@ -36314,6 +36517,7 @@ export namespace Prisma {
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
     valorPedagio?: number | null
+    categoria: $Enums.CategoriasCarros
   }
 
   export type RotaValorCreateOrConnectWithoutOperadoraInput = {
@@ -36342,8 +36546,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente: EmpresaClienteCreateNestedOneWithoutModeloVoucherFixoInput
     motorista: MotoristaCreateNestedOneWithoutModeloVoucherFixoInput
     carro: CarroCreateNestedOneWithoutModeloVoucherFixoInput
@@ -36372,8 +36576,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedCreateNestedManyWithoutModeloFixoInput
   }
 
@@ -36388,9 +36592,6 @@ export namespace Prisma {
   }
 
   export type VoucherCreateWithoutOperadoraInput = {
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -36403,6 +36604,9 @@ export namespace Prisma {
     valorTempoParado: Decimal | DecimalJsLike | number | string
     assinatura?: string | null
     observacaoMotorista?: string | null
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoCreateNestedOneWithoutVouchersGeradosInput
     rota?: RotaCreateNestedOneWithoutVouchersInput
     empresaCliente: EmpresaClienteCreateNestedOneWithoutVoucherInput
@@ -36414,9 +36618,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedCreateWithoutOperadoraInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -36435,6 +36636,9 @@ export namespace Prisma {
     motoristaId: bigint | number
     carroId: number
     adminUsuarioId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedCreateNestedManyWithoutVoucherInput
   }
 
@@ -37292,18 +37496,18 @@ export namespace Prisma {
   }
 
   export type VoucherPassageiroCreateWithoutPassageiroInput = {
-    statusPresenca?: $Enums.StatusPresenca
     horarioEmbarqueReal?: Date | string | null
     observacao?: string | null
+    statusPresenca?: $Enums.StatusPresenca
     voucher: VoucherCreateNestedOneWithoutPassageirosInput
   }
 
   export type VoucherPassageiroUncheckedCreateWithoutPassageiroInput = {
     id?: number
     voucherId: number
-    statusPresenca?: $Enums.StatusPresenca
     horarioEmbarqueReal?: Date | string | null
     observacao?: string | null
+    statusPresenca?: $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroCreateOrConnectWithoutPassageiroInput = {
@@ -37411,19 +37615,19 @@ export namespace Prisma {
     id?: IntFilter<"VoucherPassageiro"> | number
     voucherId?: IntFilter<"VoucherPassageiro"> | number
     passageiroId?: BigIntFilter<"VoucherPassageiro"> | bigint | number
-    statusPresenca?: EnumStatusPresencaFilter<"VoucherPassageiro"> | $Enums.StatusPresenca
     horarioEmbarqueReal?: DateTimeNullableFilter<"VoucherPassageiro"> | Date | string | null
     observacao?: StringNullableFilter<"VoucherPassageiro"> | string | null
+    statusPresenca?: EnumStatusPresencaFilter<"VoucherPassageiro"> | $Enums.StatusPresenca
   }
 
   export type RotaValorCreateWithoutRotaInput = {
-    categoria: $Enums.CategoriasCarros
     valorViagem: Decimal | DecimalJsLike | number | string
     valorViagemRepasse: Decimal | DecimalJsLike | number | string
     valorHoraParada: Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse: Decimal | DecimalJsLike | number | string
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
+    categoria: $Enums.CategoriasCarros
     empresaCliente?: EmpresaClienteCreateNestedOneWithoutRotaValorInput
     operadora?: OperadoraCreateNestedOneWithoutRotaValorInput
     pedagio?: PedagioCreateNestedOneWithoutRotaValorInput
@@ -37431,7 +37635,6 @@ export namespace Prisma {
 
   export type RotaValorUncheckedCreateWithoutRotaInput = {
     id?: number
-    categoria: $Enums.CategoriasCarros
     empresaClienteId?: bigint | number | null
     operadoraId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
@@ -37441,6 +37644,7 @@ export namespace Prisma {
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
     valorPedagio?: number | null
+    categoria: $Enums.CategoriasCarros
   }
 
   export type RotaValorCreateOrConnectWithoutRotaInput = {
@@ -37454,9 +37658,6 @@ export namespace Prisma {
   }
 
   export type VoucherCreateWithoutRotaInput = {
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -37469,6 +37670,9 @@ export namespace Prisma {
     valorTempoParado: Decimal | DecimalJsLike | number | string
     assinatura?: string | null
     observacaoMotorista?: string | null
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoCreateNestedOneWithoutVouchersGeradosInput
     empresaCliente: EmpresaClienteCreateNestedOneWithoutVoucherInput
     motorista: MotoristaCreateNestedOneWithoutVoucherInput
@@ -37480,9 +37684,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedCreateWithoutRotaInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -37501,6 +37702,9 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedCreateNestedManyWithoutVoucherInput
   }
 
@@ -37826,13 +38030,13 @@ export namespace Prisma {
   }
 
   export type RotaValorCreateWithoutPedagioInput = {
-    categoria: $Enums.CategoriasCarros
     valorViagem: Decimal | DecimalJsLike | number | string
     valorViagemRepasse: Decimal | DecimalJsLike | number | string
     valorHoraParada: Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse: Decimal | DecimalJsLike | number | string
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
+    categoria: $Enums.CategoriasCarros
     rota: RotaCreateNestedOneWithoutRotaValorInput
     empresaCliente?: EmpresaClienteCreateNestedOneWithoutRotaValorInput
     operadora?: OperadoraCreateNestedOneWithoutRotaValorInput
@@ -37841,7 +38045,6 @@ export namespace Prisma {
   export type RotaValorUncheckedCreateWithoutPedagioInput = {
     id?: number
     rotaId: number
-    categoria: $Enums.CategoriasCarros
     empresaClienteId?: bigint | number | null
     operadoraId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
@@ -37850,6 +38053,7 @@ export namespace Prisma {
     valorHoraParadaRepasse: Decimal | DecimalJsLike | number | string
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
+    categoria: $Enums.CategoriasCarros
   }
 
   export type RotaValorCreateOrConnectWithoutPedagioInput = {
@@ -38307,9 +38511,9 @@ export namespace Prisma {
     tipoMotorista?: string | null
     dataCriacao?: Date | string | null
     statusCnh?: boolean | null
-    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     carro?: CarroCreateNestedManyWithoutMotoristaInput
     voucher?: VoucherCreateNestedManyWithoutMotoristaInput
+    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     agregadoRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoAgregadoInput
     funcionarioRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoFuncionarioInput
   }
@@ -38470,9 +38674,6 @@ export namespace Prisma {
   }
 
   export type VoucherCreateWithoutModeloFixoInput = {
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -38485,6 +38686,9 @@ export namespace Prisma {
     valorTempoParado: Decimal | DecimalJsLike | number | string
     assinatura?: string | null
     observacaoMotorista?: string | null
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     rota?: RotaCreateNestedOneWithoutVouchersInput
     empresaCliente: EmpresaClienteCreateNestedOneWithoutVoucherInput
     motorista: MotoristaCreateNestedOneWithoutVoucherInput
@@ -38496,9 +38700,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedCreateWithoutModeloFixoInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -38517,6 +38718,9 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedCreateNestedManyWithoutVoucherInput
   }
 
@@ -38599,9 +38803,9 @@ export namespace Prisma {
     tipoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
     dataCriacao?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     statusCnh?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     carro?: CarroUpdateManyWithoutMotoristaNestedInput
     voucher?: VoucherUpdateManyWithoutMotoristaNestedInput
+    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     agregadoRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoAgregadoNestedInput
     funcionarioRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoFuncionarioNestedInput
   }
@@ -38803,10 +39007,10 @@ export namespace Prisma {
     tipoMotorista?: string | null
     dataCriacao?: Date | string | null
     statusCnh?: boolean | null
-    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     carro?: CarroCreateNestedManyWithoutMotoristaInput
     modeloVoucherFixo?: ModeloVoucherFixoCreateNestedManyWithoutMotoristaInput
     voucher?: VoucherCreateNestedManyWithoutMotoristaInput
+    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     funcionarioRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoFuncionarioInput
   }
 
@@ -38848,10 +39052,10 @@ export namespace Prisma {
     tipoMotorista?: string | null
     dataCriacao?: Date | string | null
     statusCnh?: boolean | null
-    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     carro?: CarroCreateNestedManyWithoutMotoristaInput
     modeloVoucherFixo?: ModeloVoucherFixoCreateNestedManyWithoutMotoristaInput
     voucher?: VoucherCreateNestedManyWithoutMotoristaInput
+    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     agregadoRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoAgregadoInput
   }
 
@@ -38967,10 +39171,10 @@ export namespace Prisma {
     tipoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
     dataCriacao?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     statusCnh?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     carro?: CarroUpdateManyWithoutMotoristaNestedInput
     modeloVoucherFixo?: ModeloVoucherFixoUpdateManyWithoutMotoristaNestedInput
     voucher?: VoucherUpdateManyWithoutMotoristaNestedInput
+    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     funcionarioRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoFuncionarioNestedInput
   }
 
@@ -39018,10 +39222,10 @@ export namespace Prisma {
     tipoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
     dataCriacao?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     statusCnh?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     carro?: CarroUpdateManyWithoutMotoristaNestedInput
     modeloVoucherFixo?: ModeloVoucherFixoUpdateManyWithoutMotoristaNestedInput
     voucher?: VoucherUpdateManyWithoutMotoristaNestedInput
+    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     agregadoRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoAgregadoNestedInput
   }
 
@@ -39115,9 +39319,6 @@ export namespace Prisma {
   }
 
   export type VoucherCreateWithoutPassageirosInput = {
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -39130,6 +39331,9 @@ export namespace Prisma {
     valorTempoParado: Decimal | DecimalJsLike | number | string
     assinatura?: string | null
     observacaoMotorista?: string | null
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoCreateNestedOneWithoutVouchersGeradosInput
     rota?: RotaCreateNestedOneWithoutVouchersInput
     empresaCliente: EmpresaClienteCreateNestedOneWithoutVoucherInput
@@ -39141,9 +39345,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedCreateWithoutPassageirosInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -39163,6 +39364,9 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
   }
 
   export type VoucherCreateOrConnectWithoutPassageirosInput = {
@@ -39178,6 +39382,12 @@ export namespace Prisma {
     email?: string | null
     ativo?: boolean
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
     empresaCliente: EmpresaClienteCreateNestedOneWithoutPassageirosInput
     centroCustoCliente: CentroCustoClienteCreateNestedOneWithoutPassageirosInput
   }
@@ -39192,6 +39402,12 @@ export namespace Prisma {
     empresaClienteId: bigint | number
     centroCustoClienteId: bigint | number
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
   }
 
   export type PassageiroCreateOrConnectWithoutViagensInput = {
@@ -39211,9 +39427,6 @@ export namespace Prisma {
   }
 
   export type VoucherUpdateWithoutPassageirosInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -39226,6 +39439,9 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoUpdateOneWithoutVouchersGeradosNestedInput
     rota?: RotaUpdateOneWithoutVouchersNestedInput
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutVoucherNestedInput
@@ -39237,9 +39453,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedUpdateWithoutPassageirosInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -39259,6 +39472,9 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type PassageiroUpsertWithoutViagensInput = {
@@ -39280,6 +39496,12 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     ativo?: BoolFieldUpdateOperationsInput | boolean
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutPassageirosNestedInput
     centroCustoCliente?: CentroCustoClienteUpdateOneRequiredWithoutPassageirosNestedInput
   }
@@ -39294,6 +39516,12 @@ export namespace Prisma {
     empresaClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     centroCustoClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ModeloVoucherFixoCreateWithoutVouchersGeradosInput = {
@@ -39312,8 +39540,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente: EmpresaClienteCreateNestedOneWithoutModeloVoucherFixoInput
     motorista: MotoristaCreateNestedOneWithoutModeloVoucherFixoInput
     carro: CarroCreateNestedOneWithoutModeloVoucherFixoInput
@@ -39343,8 +39571,8 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type ModeloVoucherFixoCreateOrConnectWithoutVouchersGeradosInput = {
@@ -39426,9 +39654,9 @@ export namespace Prisma {
     tipoMotorista?: string | null
     dataCriacao?: Date | string | null
     statusCnh?: boolean | null
-    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     carro?: CarroCreateNestedManyWithoutMotoristaInput
     modeloVoucherFixo?: ModeloVoucherFixoCreateNestedManyWithoutMotoristaInput
+    operadora?: OperadoraCreateNestedOneWithoutMotoristaInput
     agregadoRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoAgregadoInput
     funcionarioRelacao?: RelacaoAgrdFuncCreateNestedManyWithoutMotoristaComoFuncionarioInput
   }
@@ -39589,18 +39817,18 @@ export namespace Prisma {
   }
 
   export type VoucherPassageiroCreateWithoutVoucherInput = {
-    statusPresenca?: $Enums.StatusPresenca
     horarioEmbarqueReal?: Date | string | null
     observacao?: string | null
+    statusPresenca?: $Enums.StatusPresenca
     passageiro: PassageiroCreateNestedOneWithoutViagensInput
   }
 
   export type VoucherPassageiroUncheckedCreateWithoutVoucherInput = {
     id?: number
     passageiroId: bigint | number
-    statusPresenca?: $Enums.StatusPresenca
     horarioEmbarqueReal?: Date | string | null
     observacao?: string | null
+    statusPresenca?: $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroCreateOrConnectWithoutVoucherInput = {
@@ -39640,8 +39868,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     motorista?: MotoristaUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     carro?: CarroUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
@@ -39671,8 +39899,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type RotaUpsertWithoutVouchersInput = {
@@ -39772,9 +40000,9 @@ export namespace Prisma {
     tipoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
     dataCriacao?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     statusCnh?: NullableBoolFieldUpdateOperationsInput | boolean | null
-    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     carro?: CarroUpdateManyWithoutMotoristaNestedInput
     modeloVoucherFixo?: ModeloVoucherFixoUpdateManyWithoutMotoristaNestedInput
+    operadora?: OperadoraUpdateOneWithoutMotoristaNestedInput
     agregadoRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoAgregadoNestedInput
     funcionarioRelacao?: RelacaoAgrdFuncUpdateManyWithoutMotoristaComoFuncionarioNestedInput
   }
@@ -39984,15 +40212,12 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type VoucherCreateManyAdminUsuarioInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -40011,6 +40236,9 @@ export namespace Prisma {
     motoristaId: bigint | number
     carroId: number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
   }
 
   export type ModeloVoucherFixoUpdateWithoutAdminUsuarioInput = {
@@ -40029,8 +40257,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     motorista?: MotoristaUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     carro?: CarroUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
@@ -40059,8 +40287,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedUpdateManyWithoutModeloFixoNestedInput
   }
 
@@ -40085,14 +40313,11 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type VoucherUpdateWithoutAdminUsuarioInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40105,6 +40330,9 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoUpdateOneWithoutVouchersGeradosNestedInput
     rota?: RotaUpdateOneWithoutVouchersNestedInput
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutVoucherNestedInput
@@ -40116,9 +40344,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedUpdateWithoutAdminUsuarioInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40137,14 +40362,14 @@ export namespace Prisma {
     motoristaId?: BigIntFieldUpdateOperationsInput | bigint | number
     carroId?: IntFieldUpdateOperationsInput | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedUpdateManyWithoutVoucherNestedInput
   }
 
   export type VoucherUncheckedUpdateManyWithoutAdminUsuarioInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40163,6 +40388,9 @@ export namespace Prisma {
     motoristaId?: BigIntFieldUpdateOperationsInput | bigint | number
     carroId?: IntFieldUpdateOperationsInput | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type PassageiroCreateManyCentroCustoClienteInput = {
@@ -40174,6 +40402,12 @@ export namespace Prisma {
     ativo?: boolean
     empresaClienteId: bigint | number
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
   }
 
   export type PassageiroUpdateWithoutCentroCustoClienteInput = {
@@ -40184,6 +40418,12 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     ativo?: BoolFieldUpdateOperationsInput | boolean
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutPassageirosNestedInput
     viagens?: VoucherPassageiroUpdateManyWithoutPassageiroNestedInput
   }
@@ -40197,6 +40437,12 @@ export namespace Prisma {
     ativo?: BoolFieldUpdateOperationsInput | boolean
     empresaClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
     viagens?: VoucherPassageiroUncheckedUpdateManyWithoutPassageiroNestedInput
   }
 
@@ -40209,6 +40455,12 @@ export namespace Prisma {
     ativo?: BoolFieldUpdateOperationsInput | boolean
     empresaClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CentroCustoClienteCreateManyEmpresaClienteInput = {
@@ -40223,11 +40475,11 @@ export namespace Prisma {
     nome: string
     email: string
     senha?: string
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: string | null
     statusSolicitante?: boolean
     operadoraId?: bigint | number | null
     telefone?: string | null
+    funcao: $Enums.FuncaoSolicitante
   }
 
   export type UnidadeEmpresaClienteCreateManyEmpresaClienteInput = {
@@ -40267,15 +40519,12 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type VoucherCreateManyEmpresaClienteInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -40294,12 +40543,14 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
   }
 
   export type RotaValorCreateManyEmpresaClienteInput = {
     id?: number
     rotaId: number
-    categoria: $Enums.CategoriasCarros
     operadoraId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
     valorViagemRepasse: Decimal | DecimalJsLike | number | string
@@ -40308,6 +40559,7 @@ export namespace Prisma {
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
     valorPedagio?: number | null
+    categoria: $Enums.CategoriasCarros
   }
 
   export type RotaCreateManyEmpresaClienteInput = {
@@ -40326,6 +40578,12 @@ export namespace Prisma {
     ativo?: boolean
     centroCustoClienteId: bigint | number
     fotoPerfilPassageiro?: string | null
+    endRua?: string | null
+    endNumero?: string | null
+    endBairro?: string | null
+    endCidade?: string | null
+    pontoApanha?: string | null
+    horarioEmbarque?: string | null
   }
 
   export type CentroCustoClienteUpdateWithoutEmpresaClienteInput = {
@@ -40356,10 +40614,10 @@ export namespace Prisma {
     nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     operadora?: OperadoraUpdateOneWithoutSolicitanteNestedInput
   }
 
@@ -40368,11 +40626,11 @@ export namespace Prisma {
     nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
   }
 
   export type SolicitanteUncheckedUpdateManyWithoutEmpresaClienteInput = {
@@ -40380,11 +40638,11 @@ export namespace Prisma {
     nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
   }
 
   export type UnidadeEmpresaClienteUpdateWithoutEmpresaClienteInput = {
@@ -40451,8 +40709,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     motorista?: MotoristaUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     carro?: CarroUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     adminUsuario?: AdminUsuarioUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
@@ -40481,8 +40739,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedUpdateManyWithoutModeloFixoNestedInput
   }
 
@@ -40507,14 +40765,11 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type VoucherUpdateWithoutEmpresaClienteInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40527,6 +40782,9 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoUpdateOneWithoutVouchersGeradosNestedInput
     rota?: RotaUpdateOneWithoutVouchersNestedInput
     motorista?: MotoristaUpdateOneRequiredWithoutVoucherNestedInput
@@ -40538,9 +40796,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedUpdateWithoutEmpresaClienteInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40559,14 +40814,14 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedUpdateManyWithoutVoucherNestedInput
   }
 
   export type VoucherUncheckedUpdateManyWithoutEmpresaClienteInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40585,16 +40840,19 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type RotaValorUpdateWithoutEmpresaClienteInput = {
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParada?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     rota?: RotaUpdateOneRequiredWithoutRotaValorNestedInput
     operadora?: OperadoraUpdateOneWithoutRotaValorNestedInput
     pedagio?: PedagioUpdateOneWithoutRotaValorNestedInput
@@ -40603,7 +40861,6 @@ export namespace Prisma {
   export type RotaValorUncheckedUpdateWithoutEmpresaClienteInput = {
     id?: IntFieldUpdateOperationsInput | number
     rotaId?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -40612,12 +40869,12 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorPedagio?: NullableIntFieldUpdateOperationsInput | number | null
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type RotaValorUncheckedUpdateManyWithoutEmpresaClienteInput = {
     id?: IntFieldUpdateOperationsInput | number
     rotaId?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -40626,6 +40883,7 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorPedagio?: NullableIntFieldUpdateOperationsInput | number | null
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type RotaUpdateWithoutEmpresaClienteInput = {
@@ -40660,6 +40918,12 @@ export namespace Prisma {
     email?: NullableStringFieldUpdateOperationsInput | string | null
     ativo?: BoolFieldUpdateOperationsInput | boolean
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
     centroCustoCliente?: CentroCustoClienteUpdateOneRequiredWithoutPassageirosNestedInput
     viagens?: VoucherPassageiroUpdateManyWithoutPassageiroNestedInput
   }
@@ -40673,6 +40937,12 @@ export namespace Prisma {
     ativo?: BoolFieldUpdateOperationsInput | boolean
     centroCustoClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
     viagens?: VoucherPassageiroUncheckedUpdateManyWithoutPassageiroNestedInput
   }
 
@@ -40685,6 +40955,12 @@ export namespace Prisma {
     ativo?: BoolFieldUpdateOperationsInput | boolean
     centroCustoClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
     fotoPerfilPassageiro?: NullableStringFieldUpdateOperationsInput | string | null
+    endRua?: NullableStringFieldUpdateOperationsInput | string | null
+    endNumero?: NullableStringFieldUpdateOperationsInput | string | null
+    endBairro?: NullableStringFieldUpdateOperationsInput | string | null
+    endCidade?: NullableStringFieldUpdateOperationsInput | string | null
+    pontoApanha?: NullableStringFieldUpdateOperationsInput | string | null
+    horarioEmbarque?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CarroCreateManyMotoristaInput = {
@@ -40722,15 +40998,12 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type VoucherCreateManyMotoristaInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -40749,6 +41022,9 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
   }
 
   export type RelacaoAgrdFuncCreateManyMotoristaComoAgregadoInput = {
@@ -40824,8 +41100,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     carro?: CarroUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     adminUsuario?: AdminUsuarioUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
@@ -40854,8 +41130,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedUpdateManyWithoutModeloFixoNestedInput
   }
 
@@ -40880,14 +41156,11 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type VoucherUpdateWithoutMotoristaInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40900,6 +41173,9 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoUpdateOneWithoutVouchersGeradosNestedInput
     rota?: RotaUpdateOneWithoutVouchersNestedInput
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutVoucherNestedInput
@@ -40911,9 +41187,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedUpdateWithoutMotoristaInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40932,14 +41205,14 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedUpdateManyWithoutVoucherNestedInput
   }
 
   export type VoucherUncheckedUpdateManyWithoutMotoristaInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40958,6 +41231,9 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type RelacaoAgrdFuncUpdateWithoutMotoristaComoAgregadoInput = {
@@ -40998,9 +41274,6 @@ export namespace Prisma {
 
   export type VoucherCreateManyCarroInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -41019,6 +41292,9 @@ export namespace Prisma {
     motoristaId: bigint | number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
   }
 
   export type ModeloVoucherFixoCreateManyCarroInput = {
@@ -41042,14 +41318,11 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type VoucherUpdateWithoutCarroInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41062,6 +41335,9 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoUpdateOneWithoutVouchersGeradosNestedInput
     rota?: RotaUpdateOneWithoutVouchersNestedInput
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutVoucherNestedInput
@@ -41073,9 +41349,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedUpdateWithoutCarroInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41094,14 +41367,14 @@ export namespace Prisma {
     motoristaId?: BigIntFieldUpdateOperationsInput | bigint | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedUpdateManyWithoutVoucherNestedInput
   }
 
   export type VoucherUncheckedUpdateManyWithoutCarroInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41120,6 +41393,9 @@ export namespace Prisma {
     motoristaId?: BigIntFieldUpdateOperationsInput | bigint | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type ModeloVoucherFixoUpdateWithoutCarroInput = {
@@ -41138,8 +41414,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     motorista?: MotoristaUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     adminUsuario?: AdminUsuarioUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
@@ -41168,8 +41444,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedUpdateManyWithoutModeloFixoNestedInput
   }
 
@@ -41194,8 +41470,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type ModeloCreateManyMarcaInput = {
@@ -41265,10 +41541,10 @@ export namespace Prisma {
     email: string
     senha?: string
     empresaClienteId: bigint | number
-    funcao: $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: string | null
     statusSolicitante?: boolean
     telefone?: string | null
+    funcao: $Enums.FuncaoSolicitante
   }
 
   export type UnidadeEmpresaClienteCreateManyOperadoraInput = {
@@ -41297,7 +41573,6 @@ export namespace Prisma {
   export type RotaValorCreateManyOperadoraInput = {
     id?: number
     rotaId: number
-    categoria: $Enums.CategoriasCarros
     empresaClienteId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
     valorViagemRepasse: Decimal | DecimalJsLike | number | string
@@ -41306,6 +41581,7 @@ export namespace Prisma {
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
     valorPedagio?: number | null
+    categoria: $Enums.CategoriasCarros
   }
 
   export type ModeloVoucherFixoCreateManyOperadoraInput = {
@@ -41329,15 +41605,12 @@ export namespace Prisma {
     valorTempoParadoRepasse: Decimal | DecimalJsLike | number | string
     dataInicio: Date | string
     dataFim?: Date | string | null
-    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
     horario: Date | string
+    diasSemana?: ModeloVoucherFixoCreatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type VoucherCreateManyOperadoraInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -41356,6 +41629,9 @@ export namespace Prisma {
     motoristaId: bigint | number
     carroId: number
     adminUsuarioId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
   }
 
   export type CarroCreateManyOperadoraInput = {
@@ -41547,10 +41823,10 @@ export namespace Prisma {
     nome?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutSolicitanteNestedInput
   }
 
@@ -41560,10 +41836,10 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
     empresaClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
   }
 
   export type SolicitanteUncheckedUpdateManyWithoutOperadoraInput = {
@@ -41572,10 +41848,10 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     senha?: StringFieldUpdateOperationsInput | string
     empresaClienteId?: BigIntFieldUpdateOperationsInput | bigint | number
-    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
     fotoUrlSolicitante?: NullableStringFieldUpdateOperationsInput | string | null
     statusSolicitante?: BoolFieldUpdateOperationsInput | boolean
     telefone?: NullableStringFieldUpdateOperationsInput | string | null
+    funcao?: EnumFuncaoSolicitanteFieldUpdateOperationsInput | $Enums.FuncaoSolicitante
   }
 
   export type UnidadeEmpresaClienteUpdateWithoutOperadoraInput = {
@@ -41651,13 +41927,13 @@ export namespace Prisma {
   }
 
   export type RotaValorUpdateWithoutOperadoraInput = {
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParada?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     rota?: RotaUpdateOneRequiredWithoutRotaValorNestedInput
     empresaCliente?: EmpresaClienteUpdateOneWithoutRotaValorNestedInput
     pedagio?: PedagioUpdateOneWithoutRotaValorNestedInput
@@ -41666,7 +41942,6 @@ export namespace Prisma {
   export type RotaValorUncheckedUpdateWithoutOperadoraInput = {
     id?: IntFieldUpdateOperationsInput | number
     rotaId?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     empresaClienteId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -41675,12 +41950,12 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorPedagio?: NullableIntFieldUpdateOperationsInput | number | null
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type RotaValorUncheckedUpdateManyWithoutOperadoraInput = {
     id?: IntFieldUpdateOperationsInput | number
     rotaId?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     empresaClienteId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -41689,6 +41964,7 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorPedagio?: NullableIntFieldUpdateOperationsInput | number | null
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type ModeloVoucherFixoUpdateWithoutOperadoraInput = {
@@ -41707,8 +41983,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     motorista?: MotoristaUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
     carro?: CarroUpdateOneRequiredWithoutModeloVoucherFixoNestedInput
@@ -41737,8 +42013,8 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     vouchersGerados?: VoucherUncheckedUpdateManyWithoutModeloFixoNestedInput
   }
 
@@ -41763,14 +42039,11 @@ export namespace Prisma {
     valorTempoParadoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     dataInicio?: DateTimeFieldUpdateOperationsInput | Date | string
     dataFim?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
     horario?: DateTimeFieldUpdateOperationsInput | Date | string
+    diasSemana?: ModeloVoucherFixoUpdatediasSemanaInput | $Enums.DiaDaSemana[]
   }
 
   export type VoucherUpdateWithoutOperadoraInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41783,6 +42056,9 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoUpdateOneWithoutVouchersGeradosNestedInput
     rota?: RotaUpdateOneWithoutVouchersNestedInput
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutVoucherNestedInput
@@ -41794,9 +42070,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedUpdateWithoutOperadoraInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41815,14 +42088,14 @@ export namespace Prisma {
     motoristaId?: BigIntFieldUpdateOperationsInput | bigint | number
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedUpdateManyWithoutVoucherNestedInput
   }
 
   export type VoucherUncheckedUpdateManyWithoutOperadoraInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -41841,6 +42114,9 @@ export namespace Prisma {
     motoristaId?: BigIntFieldUpdateOperationsInput | bigint | number
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type CarroUpdateWithoutOperadoraInput = {
@@ -41928,37 +42204,36 @@ export namespace Prisma {
   export type VoucherPassageiroCreateManyPassageiroInput = {
     id?: number
     voucherId: number
-    statusPresenca?: $Enums.StatusPresenca
     horarioEmbarqueReal?: Date | string | null
     observacao?: string | null
+    statusPresenca?: $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroUpdateWithoutPassageiroInput = {
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     voucher?: VoucherUpdateOneRequiredWithoutPassageirosNestedInput
   }
 
   export type VoucherPassageiroUncheckedUpdateWithoutPassageiroInput = {
     id?: IntFieldUpdateOperationsInput | number
     voucherId?: IntFieldUpdateOperationsInput | number
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroUncheckedUpdateManyWithoutPassageiroInput = {
     id?: IntFieldUpdateOperationsInput | number
     voucherId?: IntFieldUpdateOperationsInput | number
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
   }
 
   export type RotaValorCreateManyRotaInput = {
     id?: number
-    categoria: $Enums.CategoriasCarros
     empresaClienteId?: bigint | number | null
     operadoraId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
@@ -41968,13 +42243,11 @@ export namespace Prisma {
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
     valorPedagio?: number | null
+    categoria: $Enums.CategoriasCarros
   }
 
   export type VoucherCreateManyRotaInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -41993,16 +42266,19 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
   }
 
   export type RotaValorUpdateWithoutRotaInput = {
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParada?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     empresaCliente?: EmpresaClienteUpdateOneWithoutRotaValorNestedInput
     operadora?: OperadoraUpdateOneWithoutRotaValorNestedInput
     pedagio?: PedagioUpdateOneWithoutRotaValorNestedInput
@@ -42010,7 +42286,6 @@ export namespace Prisma {
 
   export type RotaValorUncheckedUpdateWithoutRotaInput = {
     id?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     empresaClienteId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -42020,11 +42295,11 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorPedagio?: NullableIntFieldUpdateOperationsInput | number | null
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type RotaValorUncheckedUpdateManyWithoutRotaInput = {
     id?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     empresaClienteId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -42034,12 +42309,10 @@ export namespace Prisma {
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorPedagio?: NullableIntFieldUpdateOperationsInput | number | null
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type VoucherUpdateWithoutRotaInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42052,6 +42325,9 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     modeloFixo?: ModeloVoucherFixoUpdateOneWithoutVouchersGeradosNestedInput
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutVoucherNestedInput
     motorista?: MotoristaUpdateOneRequiredWithoutVoucherNestedInput
@@ -42063,9 +42339,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedUpdateWithoutRotaInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42084,14 +42357,14 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedUpdateManyWithoutVoucherNestedInput
   }
 
   export type VoucherUncheckedUpdateManyWithoutRotaInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42110,12 +42383,14 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type RotaValorCreateManyPedagioInput = {
     id?: number
     rotaId: number
-    categoria: $Enums.CategoriasCarros
     empresaClienteId?: bigint | number | null
     operadoraId?: bigint | number | null
     valorViagem: Decimal | DecimalJsLike | number | string
@@ -42124,16 +42399,17 @@ export namespace Prisma {
     valorHoraParadaRepasse: Decimal | DecimalJsLike | number | string
     valorDeslocamento: Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse: Decimal | DecimalJsLike | number | string
+    categoria: $Enums.CategoriasCarros
   }
 
   export type RotaValorUpdateWithoutPedagioInput = {
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorViagemRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParada?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorHoraParadaRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     rota?: RotaUpdateOneRequiredWithoutRotaValorNestedInput
     empresaCliente?: EmpresaClienteUpdateOneWithoutRotaValorNestedInput
     operadora?: OperadoraUpdateOneWithoutRotaValorNestedInput
@@ -42142,7 +42418,6 @@ export namespace Prisma {
   export type RotaValorUncheckedUpdateWithoutPedagioInput = {
     id?: IntFieldUpdateOperationsInput | number
     rotaId?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     empresaClienteId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -42151,12 +42426,12 @@ export namespace Prisma {
     valorHoraParadaRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type RotaValorUncheckedUpdateManyWithoutPedagioInput = {
     id?: IntFieldUpdateOperationsInput | number
     rotaId?: IntFieldUpdateOperationsInput | number
-    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
     empresaClienteId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     operadoraId?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     valorViagem?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
@@ -42165,13 +42440,11 @@ export namespace Prisma {
     valorHoraParadaRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamento?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     valorDeslocamentoRepasse?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    categoria?: EnumCategoriasCarrosFieldUpdateOperationsInput | $Enums.CategoriasCarros
   }
 
   export type VoucherCreateManyModeloFixoInput = {
     id?: number
-    natureza: $Enums.NaturezaVoucher
-    tipoCorrida: $Enums.TipoCorrida
-    status: $Enums.StatusVoucher
     origem: string
     destino: string
     dataHoraProgramado: Date | string
@@ -42190,12 +42463,12 @@ export namespace Prisma {
     carroId: number
     adminUsuarioId: bigint | number
     operadoraId: bigint | number
+    natureza: $Enums.NaturezaVoucher
+    tipoCorrida: $Enums.TipoCorrida
+    status: $Enums.StatusVoucher
   }
 
   export type VoucherUpdateWithoutModeloFixoInput = {
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42208,6 +42481,9 @@ export namespace Prisma {
     valorTempoParado?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
     assinatura?: NullableStringFieldUpdateOperationsInput | string | null
     observacaoMotorista?: NullableStringFieldUpdateOperationsInput | string | null
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     rota?: RotaUpdateOneWithoutVouchersNestedInput
     empresaCliente?: EmpresaClienteUpdateOneRequiredWithoutVoucherNestedInput
     motorista?: MotoristaUpdateOneRequiredWithoutVoucherNestedInput
@@ -42219,9 +42495,6 @@ export namespace Prisma {
 
   export type VoucherUncheckedUpdateWithoutModeloFixoInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42240,14 +42513,14 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     passageiros?: VoucherPassageiroUncheckedUpdateManyWithoutVoucherNestedInput
   }
 
   export type VoucherUncheckedUpdateManyWithoutModeloFixoInput = {
     id?: IntFieldUpdateOperationsInput | number
-    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
-    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
-    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
     origem?: StringFieldUpdateOperationsInput | string
     destino?: StringFieldUpdateOperationsInput | string
     dataHoraProgramado?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -42266,37 +42539,40 @@ export namespace Prisma {
     carroId?: IntFieldUpdateOperationsInput | number
     adminUsuarioId?: BigIntFieldUpdateOperationsInput | bigint | number
     operadoraId?: BigIntFieldUpdateOperationsInput | bigint | number
+    natureza?: EnumNaturezaVoucherFieldUpdateOperationsInput | $Enums.NaturezaVoucher
+    tipoCorrida?: EnumTipoCorridaFieldUpdateOperationsInput | $Enums.TipoCorrida
+    status?: EnumStatusVoucherFieldUpdateOperationsInput | $Enums.StatusVoucher
   }
 
   export type VoucherPassageiroCreateManyVoucherInput = {
     id?: number
     passageiroId: bigint | number
-    statusPresenca?: $Enums.StatusPresenca
     horarioEmbarqueReal?: Date | string | null
     observacao?: string | null
+    statusPresenca?: $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroUpdateWithoutVoucherInput = {
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     passageiro?: PassageiroUpdateOneRequiredWithoutViagensNestedInput
   }
 
   export type VoucherPassageiroUncheckedUpdateWithoutVoucherInput = {
     id?: IntFieldUpdateOperationsInput | number
     passageiroId?: BigIntFieldUpdateOperationsInput | bigint | number
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
   }
 
   export type VoucherPassageiroUncheckedUpdateManyWithoutVoucherInput = {
     id?: IntFieldUpdateOperationsInput | number
     passageiroId?: BigIntFieldUpdateOperationsInput | bigint | number
-    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
     horarioEmbarqueReal?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     observacao?: NullableStringFieldUpdateOperationsInput | string | null
+    statusPresenca?: EnumStatusPresencaFieldUpdateOperationsInput | $Enums.StatusPresenca
   }
 
 
